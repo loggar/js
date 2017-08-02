@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>localStorage, sessionStorage</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 데이터 보존, 이하의 세 줄은 같은 값
+		localStorage.setItem('foo', 'bar');
+		localStorage.foo = 'bar';
+		localStorage['foo'] = 'bar';
+
+		// 데이터 참조, 아래의 세 줄은 같은 값
+		var data = localStorage.getItem('foo');
+		var data = localStorage.foo;
+		var data = localStorage['foo'];
+
+		// 임의의 객체 
+		var obj = {
+			x : 1,
+			y : 2
+		};
+		// 객체를 JSON 문자열로 변환해서 보존 
+		localStorage.foo = JSON.stringify(obj);
+		// 보존된 JSON 문자열을 객체로 복원
+		var obj2 = JSON.parse(localStorage.foo);
+
+		// 'foo'라는 키로 저장된 값을 제거
+		localStorage.removeItem('foo');
+		delete localStorage.foo;
+		delete localStorage['foo'];
+
+		// 보존되어 있는 모든 값 제거
+		localStorage.clear();
+
+		// 보존중인 모든 데이터 열거
+		for (var i = 0; i < localStorage.length; i++) {
+			var key = localStorage.key(i);
+			var value = localStorage[key];
+		}
+
+		for ( var key in localStorage) {
+			if (localStorage.hasOwnProperty(key)) {
+				var value = localStorage[key];
+			}
+		}
+
+		// 어느 윈도우에서 웹 스토리지의 데이터가 변경되면 storage 이벤트가 트리거
+		// storage 이벤트 객체의 프로퍼티 목록
+		/*
+		key 갱신된 키 이름
+		oldValue 갱신 전 값
+		newValue 갱신 후 값
+		url 갱신된 페이지 URL
+		storageArea localStorage나 sessionStorage
+		 */
+
+		// storage 이벤트의 이용 예
+		window.addEventListener('storage', function(event) {
+			if (event.key === 'userid') {
+				var msg = '안녕하세요, ' + event.newValue + '씨';
+				console.log(msg);
+			}
+		}, false);
+
+		// 버전 관리
+		window.onload = function() {
+			if (!localStorage.version) {
+				localStorage.version = '1.0';
+			} else if (localStorage.version === '1.0') {
+				localStorage.version = '1.1';
+			}
+		}
+	</script>
+</body>
+</html>

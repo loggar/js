@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<title></title>
+</head>
+<body>
+	<div id="content_01">
+		<button>BUTTON 01</button>
+		<span>SPAN 01</span>
+	</div>
+	<script type="text/javascript">
+		var buttonCounter = {
+			x : 0,
+			updateCount : function() {
+				this.x++;
+				console.log(this.x);
+			}
+		}
+
+		/*
+		 * Use case 1.
+		 */
+		document.querySelector("button").addEventListener("click", function() {
+			buttonCounter.updateCount();
+		});
+
+		/*
+		 * Use case 2.
+		 */
+		document.querySelector("span").addEventListener("click", buttonCounter.updateCount.bind(buttonCounter));
+	</script>
+</body>
+</html>

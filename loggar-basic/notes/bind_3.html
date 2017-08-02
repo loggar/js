@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<title></title>
+</head>
+<body>
+	<div id="content_01">
+		<button>BUTTON 01</button>
+		<span>SPAN 01</span>
+	</div>
+
+	<script type="text/javascript">
+		/* Simple example of what Function.prototype.bind() might look like (in your browser) */
+
+		Function.prototype.bind = function(scope) {
+			var self = this;
+
+			return function() {
+				return self.apply(scope);
+			};
+		}
+
+		/* Simple use case. */
+
+		var foo = {
+			x : 3
+		}
+
+		var bar = function() {
+			console.log(this.x);
+		}
+
+		bar(); // undefined
+
+		var boundFunc = bar.bind(foo);
+
+		boundFunc(); //3
+	</script>
+</body>
+</html>

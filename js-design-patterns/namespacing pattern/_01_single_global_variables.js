@@ -1,0 +1,5 @@
+var myApplication = (function () {
+    return {
+        //...
+    }
+})();

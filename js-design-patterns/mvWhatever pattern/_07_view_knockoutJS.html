@@ -1,0 +1,5 @@
+<p><input id="source" data-bind="value: contactName, valueUpdate: 'keyup'" /></p>
+<div data-bind="visible: contactName().length > 10">
+    You have a really long name!
+</div>
+<p>Contact name: <strong data-bind="text: contactName"></strong></p>

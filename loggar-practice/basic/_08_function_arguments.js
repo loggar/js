@@ -36,7 +36,7 @@ function publicVariableScope() {
 			console.log("add.desc: " + add.desc); // ReferenceError 예상.
 			console.log("arguments.callee.desc: " + arguments.callee.desc); // Runtime referencing. it is working.
 		} catch(e) {
-			// ReferenceError 예상했으나 발생하지 않았음. Javascript 스펙 변경 추정.
+			// ? ReferenceError 예상했으나 발생하지 않았음.
 			console.log(e);
 		}
 		

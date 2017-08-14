@@ -1,8 +1,8 @@
 function number_01() {
-	var n1 = 255; // 정수표현
-	var n2 = 255.0; // 실수표현
-	var n3 = 0o377; // 8진수 표현
-	var n4 = 0xff; //16진수 표현
+	var n1 = 255; // integer
+	var n2 = 255.0; // float
+	var n3 = 0o377; // octal
+	var n4 = 0xff; // hexa
 	
 	console.log(n1 + " : " + typeof n1);
 	console.log(n2 + " : " + typeof n2);

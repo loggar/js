@@ -1,4 +1,4 @@
-/* using transpilers such as Traceur Compiler, Babel or Rollup. */
+/* (in browser) using transpilers such as Traceur Compiler, Babel or Rollup. */
 
 import { square, diag } from './module.es6';
 console.log(square(11)); // 121

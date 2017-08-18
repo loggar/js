@@ -1,5 +1,5 @@
 module.exports = (function() {
-	const sqrt = Math.sqrt;
+	var sqrt = Math.sqrt;
 	var square = function(x) {
 		return x * x;
 	}

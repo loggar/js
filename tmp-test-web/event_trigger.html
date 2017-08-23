@@ -2,29 +2,29 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script type="text/javascript" src="../js.basic/_00_loggar_logger_obj.js"></script>
-  <title></title>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../js.basic/_00_loggar_logger_obj.js"></script>
+	<title></title>
 </head>
 
 <body>
-  <div id="content_01">
-    <a class="abcd" href="http://www.google.com">google.com</a> <a class="abcd" href="http://www.naver.com">naver.com</a>
-  </div>
-  <div id="content_02">
-    <button id="button1" onClick="button1()">button1</button>
-  </div>
+	<div id="content_01">
+		<a class="abcd" href="http://www.google.com">google.com</a> <a class="abcd" href="http://www.naver.com">naver.com</a>
+	</div>
+	<div id="content_02">
+		<button id="button1" onClick="button1()">button1</button>
+	</div>
 
-  <script type="text/javascript">
-    var button1 = function () {
+	<script type="text/javascript">
+		var button1 = function () {
 
-      $(".abcd").each(function () {
-        console.log(this.href);
-        window.open(this.href).close();
-      });
-    }
-  </script>
+			$(".abcd").each(function () {
+				console.log(this.href);
+				window.open(this.href).close();
+			});
+		}
+	</script>
 </body>
 
 </html>

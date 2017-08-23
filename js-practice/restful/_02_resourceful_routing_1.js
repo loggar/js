@@ -7,17 +7,17 @@ DELETE  /albums/:id       ->  destroy
 */
 
 // GET     /albums    ->  index
-app.get('/albums', function(req, res) {
-  var index = map(albums, function(album) {
-    return {
-      href : '/albums/' + album.id,
-      properties : {
-        name : album.name,
-        artist : album.artist
-      }
-    };
-  });
-  res.send(index);
+app.get('/albums', function (req, res) {
+	var index = map(albums, function (album) {
+		return {
+			href: '/albums/' + album.id,
+			properties: {
+				name: album.name,
+				artist: album.artist
+			}
+		};
+	});
+	res.send(index);
 });
 
 /*
@@ -32,21 +32,21 @@ app.get('/albums', function(req, res) {
 }*/
 
 //POST    /albums    ->  create, return URI
-app.post('/albums', function(req, res) {
-  var id = cuid(),
-    album = mixIn({}, req.body, {
-      id : id
-    });
+app.post('/albums', function (req, res) {
+	var id = cuid(),
+		album = mixIn({}, req.body, {
+			id: id
+		});
 
-  albums[id] = album;
-  res.send(201, {
-    href : '/albums/' + id
-  });
+	albums[id] = album;
+	res.send(201, {
+		href: '/albums/' + id
+	});
 });
 
 //Send available options on OPTIONS requests
-app.options('/albums', function(req, res) {
-  res.send([ 'GET', 'POST', 'OPTIONS' ]);
+app.options('/albums', function (req, res) {
+	res.send(['GET', 'POST', 'OPTIONS']);
 });
 
 //Deliver 405 errors if the request method isn't

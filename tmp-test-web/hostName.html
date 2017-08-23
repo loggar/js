@@ -2,27 +2,27 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script type="text/javascript" src="../js.basic/_00_loggar_logger_obj.js"></script>
-  <title></title>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="../js.basic/_00_loggar_logger_obj.js"></script>
+	<title></title>
 </head>
 
 <body>
-  <div id="content_01">
-    <span>SPAN 01</span>
-  </div>
+	<div id="content_01">
+		<span>SPAN 01</span>
+	</div>
 
-  <script type="text/javascript">
-    var AJAX_DEBUG_MODE = false;
+	<script type="text/javascript">
+		var AJAX_DEBUG_MODE = false;
 
-    if (location.hostname && location.hostname == "localhost") {
-      AJAX_DEBUG_MODE = true;
-    }
+		if (location.hostname && location.hostname == "localhost") {
+			AJAX_DEBUG_MODE = true;
+		}
 
-    logger.debug(location.hostname);
-    logger.debug(AJAX_DEBUG_MODE);
-  </script>
+		logger.debug(location.hostname);
+		logger.debug(AJAX_DEBUG_MODE);
+	</script>
 </body>
 
 </html>

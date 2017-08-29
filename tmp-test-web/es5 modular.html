@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<title></title>
+</head>
+
+<body>
+	<div id="content_01">
+		<a class="abcd" href="http://www.google.com">google.com</a> <a class="abcd" href="http://www.naver.com">naver.com</a>
+	</div>
+	<script type="text/javascript">
+		var a = 0;
+
+		var fn_module = (function () {
+			var module1 = (function () {
+				var a = 1;
+				var fn_1 = function (x) {
+					a = x;
+				}
+				var fn_2 = function() {
+					return a;
+				}
+				return { 
+					fn_1: fn_1,
+					fn_2: fn_2
+				};
+			})();
+
+			return module1;
+		})();
+
+		console.log(fn_module);
+		fn_module.fn_1(3);
+		console.log(fn_module.fn_2());
+
+		(function($){
+			console.log($);
+		})(jQuery);
+
+		
+
+
+
+
+	</script>
+</body>
+
+</html>

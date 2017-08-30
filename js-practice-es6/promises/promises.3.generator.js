@@ -1,4 +1,3 @@
-
 function step1() { console.log("fn step1"); }
 function step1Failed() { console.log("fn step1Failed"); }
 function step2() { console.log("fn step2"); }

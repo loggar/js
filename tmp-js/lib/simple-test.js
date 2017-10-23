@@ -10,7 +10,7 @@ module.exports = (function () {
   }
 
   return {
-    ok: function (id, b) {
+    is: function (id, b) {
       var result = !!b;
       log(id, result);
       return result;

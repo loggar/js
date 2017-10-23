@@ -1,5 +1,3 @@
-var {ok, not} = require("../../lib/loggar-test/simple-test.js");
-
 var multiply = function(x, y) {
   return x * y;
 }
@@ -18,5 +16,5 @@ var boundDouble = multiply.bind(null, 2);
 
 /* test */
 var i = 1;
-ok(i++, double(4) == 8);
-ok(i++, boundDouble(4) == 8);
+console.log(double(4) == 8);
+console.log(boundDouble(4) == 8);

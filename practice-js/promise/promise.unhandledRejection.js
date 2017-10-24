@@ -1,4 +1,4 @@
-/*Unhandled Rejected Promises*/
+/* Unhandled Rejected Promises*/
 // nodejs
 process.on('unhandledRejection', (reason) => {
   console.log('Reason: ' + reason);

@@ -8,7 +8,6 @@ function step4() { console.log("fn step4"); }
 
 
 function* main() {
-
 	try {
 		var ret = yield step1();
 	}

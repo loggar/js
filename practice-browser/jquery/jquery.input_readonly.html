@@ -9,13 +9,12 @@
 
 <body>
 	<input id="input_1" type="text" />
-	<span id="input_1_readonly"></span>
+	<span>prop readonly : </span><span id="input_1_readonly"></span>
 	<script type="text/javascript">
 		(function ($) {
 			$("#input_1").prop("readonly", false);
 			$("#input_1").prop("readonly", true);
-
-			$("#input_1_readonly").html("prop readonly : " + $("#input_1").prop("readonly"));
+			$("#input_1_readonly").html($("#input_1").prop("readonly"));
 		})(jQuery);
 	</script>
 </body>

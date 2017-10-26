@@ -1,5 +1,3 @@
-/* jshint ignore:start */
-
 var add_1 = function(x,y) {
 	x = x || 0;
 	y = y || 0;

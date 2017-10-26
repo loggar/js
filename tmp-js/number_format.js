@@ -1,14 +1,12 @@
 function toMoneyFormat(target) {
-	/* jshint ignore:start */
 	var formatter = new Intl.NumberFormat('en-AU', {
 		// style : 'currency',
 		// currency : 'AUD',
-		minimumFractionDigits : 2,
-		maximumFractionDigits : 2
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2
 	});
 
 	return formatter.format(target);
-	/* jshint ignore:end */
 }
 
 /* test */

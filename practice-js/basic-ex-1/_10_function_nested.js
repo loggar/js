@@ -1,5 +1,3 @@
-/* jshint ignore:start */
-
 var a = function(arg) {
 	var b = function(arg_b) {
 		var nested_var = arg;

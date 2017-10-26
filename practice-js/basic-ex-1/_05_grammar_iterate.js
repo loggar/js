@@ -1,4 +1,3 @@
-/* jshint ignore:start */
 /**
  * javascript 의 지역변수 scope 는 function 단위이다. for 구문 안에서 선언되었더라도 해당 function 의 내부에서 for 문 종료후에도 유효하다. 선언 이전에는 undefined 이다.
  * 

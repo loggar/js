@@ -1,5 +1,3 @@
-/* jshint ignore:start */
-
 function iterate_for_in(obj_or_arr) {
 	var str = "{";
 	for(prop_or_index in obj_or_arr) {

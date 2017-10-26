@@ -35,8 +35,6 @@ console.log(person_as_an_object);
 /*
  * check __proto__ of the person_as_an_object instance.
  */
-/* jshint ignore:start */
 console.log(person_as_an_object.__proto__);
 console.log(person_as_an_object.__proto__.__proto__);
 console.log(person_as_an_object.__proto__.__proto__.__proto__);
-/* jshint ignore:end */

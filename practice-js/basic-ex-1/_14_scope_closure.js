@@ -1,5 +1,3 @@
-/** module logger */ var logger={fn_logging_tool:null,prefix_debug:"[DEBUG] ",prefix_err:"[ERROR] ",typeof_logTarget:"",debug:function(c){this.typeof_logTarget=typeof c||"";this.str_debug=""+this.prefix_debug;this.str_debug=this.str_debug+this.typeof_logTarget+" "+c;if(this.typeof_logTarget=="object")this.str_debug+=" "+function(a){var b="{";for(prop_or_index in a)b+=(prop_or_index+":"+a[prop_or_index]+", ");return b.substring(0,b.length-2)+"}"}(c);this.fn_logging_tool(this.str_debug);return},error:function(e){this.fn_logging_tool(this.prefix_err+e);return}};logger.fn_logging_tool=logger.fn_logging_tool||console.log;
-
 /*
  * 변수 체인은 하위함수로부터 시작된다(우선된다)
  * 정의된 변수 x가 사용되는 가장 하위 함수에서 x의 스코프는 살아있다.(반환후 참조되고 있는 한)
@@ -23,20 +21,20 @@ function outer() {
 
 var x=-1;
 
-logger.debug(outer());
-logger.debug(outer());
-logger.debug(outer());
+console.log(outer());
+console.log(outer());
+console.log(outer());
 
 var f = outer();
-logger.debug(f());
-logger.debug(f());
-logger.debug(f());
+console.log(f());
+console.log(f());
+console.log(f());
 
 var f2 = outer();
 
-logger.debug(f2());
-logger.debug(f2());
+console.log(f2());
+console.log(f2());
 
-logger.debug(f());
-logger.debug(f());
+console.log(f());
+console.log(f());
 

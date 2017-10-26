@@ -43,6 +43,7 @@ Thumbs.db
 
 # compiled output
 dist
+.dist
 tmp
 out-tsc
 

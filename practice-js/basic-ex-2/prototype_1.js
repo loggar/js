@@ -8,12 +8,9 @@ var f = function() {
 	return "f()";
 };
 
-/* jshint ignore:start */
 console.log(o.__proto__);
 console.log(a.__proto__);
 console.log(f.__proto__);
-/* jshint ignore:end */
-
 
 var Animal = {
 		eat : true,
@@ -33,10 +30,7 @@ var Rabbit = {
 		}
 };
 
-/* jshint ignore:start */
 Rabbit.__proto__ = Animal;
-/* jshint ignore:end */
-
 
 console.log(Animal);
 console.log(Rabbit);

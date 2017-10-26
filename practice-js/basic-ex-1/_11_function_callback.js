@@ -1,5 +1,3 @@
-/* jshint ignore:start */
-
 function mainProgram() {
 	var arg = "abc";
 	

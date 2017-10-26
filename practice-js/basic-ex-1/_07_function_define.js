@@ -1,5 +1,3 @@
-/* jshint ignore:start */
-
 function f() {}
 f.prop1 = "p";
 f.method1 = function() {return this.prop1;};

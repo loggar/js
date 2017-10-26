@@ -8,4 +8,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var should = _chai2.default.should();
 console.log(should);
-console.log("babel watch test2.");
+console.log("babel watch test3.");
+
+//# sourceMappingURL=chai.should.es6.build.js.map

@@ -8,3 +8,11 @@ var o = {
 for(var p in o) {
 	console.log(p + "=" + o[p]);
 }
+
+
+
+var sparseArray = ["a", "b", "c", "d", "e"];
+
+for(var index in sparseArray) {
+	console.log(index + ":" + sparseArray[index]);
+}

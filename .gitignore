@@ -11,6 +11,7 @@ npm-debug.log*
 # dependency directories
 node_modules
 jspm_packages
+bower_components
 
 # optional npm cache directory
 .npm

@@ -1,0 +1,16 @@
+{
+  "name": "loggar_nodejs_persist",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "charly.loggar@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "node-persist": "^2.1.0"
+  },
+  "devDependencies": {},
+  "main": "app.js"
+}

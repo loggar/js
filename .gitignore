@@ -47,6 +47,7 @@ dist
 .dist
 tmp
 out-tsc
+build
 
 # test
 _test-output

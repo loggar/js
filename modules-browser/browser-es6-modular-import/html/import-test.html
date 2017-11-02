@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="author" content="chalry LEE" />
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+
+<body>
+    <script type="module">
+        import { module_1 } from "/module/module-1.js";
+        module_1.f();
+        console.log(module_1.v);
+
+        import { module_2 } from "/module/module-2.js";
+        const module2 = module_2();
+        module2.f();
+        console.log(module2.v);
+
+        import { module_3 } from "/module/module-3.js";
+        console.log(this);
+        module_3({ x: 1 });
+    </script>
+    <script type="text/javascript">
+        // Uncaught ReferenceError
+        // console.log(module_3);
+    </script>
+    <script type="module">
+        // Uncaught ReferenceError
+        // console.log(module_3);
+    </script>
+
+</body>
+
+</html>

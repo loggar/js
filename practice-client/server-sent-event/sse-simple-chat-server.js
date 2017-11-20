@@ -1,5 +1,3 @@
-/* Server sample with nodeJS */
-
 // This is server-side JavaScript, intended to be run with NodeJS.
 // It implements a very simple, completely anonymous chat room.
 // POST new messages to /chat, or GET a text/event-stream of messages

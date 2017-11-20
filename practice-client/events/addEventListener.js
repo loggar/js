@@ -1,0 +1,8 @@
+var b = document.getElementById("mybutton");
+b.onclick = function () { alert("Thanks for clicking me!"); };
+b.addEventListener("click", function () { alert("Thanks again!"); }, false);
+
+
+
+document.removeEventListener("mousemove", handleMouseMove, true);
+document.removeEventListener("mouseup", handleMouseUp, true);

@@ -7,6 +7,7 @@
 
 <body>
 	<script type="module">
+		console.log("1 context: " + this);
 		import { module_1 } from "/module/module_1.js";
 		module_1.f();
 		console.log(module_1.v);
@@ -15,25 +16,20 @@
 		const module2 = module_2();
 		module2.f();
 		console.log(module2.v);
-
-		import { module_3 } from "/module/module_3.js";
-		console.log(this);
-		module_3({ x: 1 });
 	</script>
 	<script type="module">
-		import { module_3 } from "/module/module_3.js";
-		console.log(this);
-		module_3({ x: 1 });
+		console.log("2 context: " + this);
+		// module_1.f(); // Uncaught ReferenceError
 	</script>
 	<script>
-        // console.log(module_3);
-        // Uncaught ReferenceError
+		console.log("3 context: " + this);
+		// console.log(module_3); // Uncaught ReferenceError
 	</script>
 	<script type="module">
-		// console.log(module_3);
-        // Uncaught ReferenceError
+		console.log("4 context: " + this);
+		import { module_3 } from "/module/module_3.js";
+		module_3({x:1});
 	</script>
-
 </body>
 
 </html>

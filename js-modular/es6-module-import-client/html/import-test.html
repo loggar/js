@@ -8,11 +8,11 @@
 <body>
 	<script type="module">
 		console.log("1 context: " + this);
-		import { module_1 } from "/module/module_1.js";
+		import { module_1 } from "/lib/module_1.js";
 		module_1.f();
 		console.log(module_1.v);
 
-		import { module_2 } from "/module/module_2.js";
+		import { module_2 } from "/lib/module_2.js";
 		const module2 = module_2();
 		module2.f();
 		console.log(module2.v);
@@ -27,8 +27,10 @@
 	</script>
 	<script type="module">
 		console.log("4 context: " + this);
-		import { module_3 } from "/module/module_3.js";
+		import { module_3 } from "/lib/module_3.js";
 		module_3({x:1});
+		console.log(window);
+		console.log(document);
 	</script>
 </body>
 

@@ -31,4 +31,3 @@ if(str[8] === "T") {
 	console.log(str.substr(6,2));
 }
 
-

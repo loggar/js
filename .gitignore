@@ -53,6 +53,8 @@ build
 # test
 _test-output
 _temp
+tmp-js/_tmp.js
+tmp-js/_tmp.html
 
 # visual studio code
 .vscode

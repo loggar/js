@@ -1,4 +1,4 @@
 var stringUtil = require("./stringUtil");
 
 /* test */
-console.log("[" + stringUtil.removeSpace("sdlkdfk@koi.edu.au,  sdlkjsdlkfj@gmail.com   ") + "]");
+console.log("[" + stringUtil.removeSpace("sdlkdfk@abcd.com,  sdlkjsdlkfj@abcd.com.au   ") + "]");

@@ -29,5 +29,4 @@ var stringUtil = {
 	}
 };
 
-/* test */
-console.log("[" + stringUtil.removeSpace("sdlkdfk@koi.edu.au,  sdlkjsdlkfj@gmail.com   ") + "]");
+module.exports = stringUtil;

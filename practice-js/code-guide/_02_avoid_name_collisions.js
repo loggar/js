@@ -1,4 +1,4 @@
 (function myScript() {
-  var x;
-  // Do stuff with x...
+	var x;
+	// Do stuff with x...
 }());

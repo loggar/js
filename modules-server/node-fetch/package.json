@@ -1,7 +1,7 @@
 {
 	"name": "node-fetch-sample",
 	"version": "0.1",
-	"main": "sample.js",
+	"main": "/src/sample.js",
 	"dependencies": {
 		"node-fetch": "^2.1.1"
 	}

@@ -1,8 +1,5 @@
 {
 	"private": true,
-	"scripts": {
-		"babel-c": "babel src -d dist"
-	},
 	"dependencies": {},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",

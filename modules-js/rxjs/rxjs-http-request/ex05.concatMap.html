@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/rxjs/bundles/Rx.min.js"></script>
+	<title></title>
+</head>
+
+<body>
+	<div class="container">
+		<!-- Search controls -->
+		<h1>Search Github Users</h1>
+		<div class="form-group">
+			<label for="search-box">
+				Username:
+			</label>
+			<input id="search-box" type="text" class="form-control" />
+		</div>
+		<hr />
+
+		<!-- Search result -->
+		<a href="" target="_blank" id="search-result" style="display:none;">
+			<h2 id="search-result__login"></h2>
+			<img src="" alt="avatar" width="150px" height="150px" id="search-result__avatar" />
+		</a>
+
+		<!-- Error message -->
+		<div id="error" class="well" style="display:none;">
+			<p id="error__message">
+			</p>
+		</div>
+	</div>
+	<script>
+		let userTypesInSearchBox = Rx.Observable.fromEvent(
+			$("#search-box"),
+			'keyup'
+		)
+			.map((event) => {
+				return $("#search-box").val();
+			});
+
+		userTypesInSearchBox
+			.concatMap((searchTerm) => {
+				return Rx.Observable.fromPromise(
+					$.get('https://api.github.com/users/' + searchTerm)
+				)
+					.catch(() => Rx.Observable.empty());
+			})
+			.subscribe((response) => {
+				renderUser(
+					response.login,
+					response.html_url,
+					response.avatar_url
+				);
+			});
+
+		function renderUser(login, href, imgSrc) {
+			$("#search-result").show();
+			$("#search-result").attr("href", href);
+			$("#search-result__avatar").attr('src', imgSrc);
+			$('#search-result__login').text(login);
+		}
+	</script>
+</body>
+
+</html>

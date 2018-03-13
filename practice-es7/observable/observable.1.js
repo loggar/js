@@ -21,7 +21,6 @@ var change = new Observable((o) => {
 
 });
 
-
 // create an observer to handle notfications
 // from various observables
 var observer = {

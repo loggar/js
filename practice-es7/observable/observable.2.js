@@ -1,7 +1,6 @@
 // an observable to handle window resize events
 // --------------------------------------------
 var resize = new Observable((o) => {
-
 	// function to handle resize event
 	// and forward through observable
 	function onResize() {
@@ -23,7 +22,6 @@ var resize = new Observable((o) => {
 // an observable to handle a data model change
 // -------------------------------------------
 var change = new Observable((o) => {
-
 	// function to handle model change event
 	// and forward through observable
 	function onChange(key, value) {

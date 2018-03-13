@@ -1,1 +1,1 @@
-# loggar javascript, es6, node, express
+# loggar javascript, es6, es7, node, express

@@ -14,9 +14,9 @@ module.exports = function (process_nm) {
 	if (!process_nm) process_nm = 'unknown';
 	else process_nm = path.basename(process_nm, '.js');
 
-	var timestamp = function () {
+	var timestamp = (function () {
 		return dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
-	}
+	})();
 
 	var formatter = function (options) {
 		return options.timestamp() + ' [' + options.level.toUpperCase()[0] + '] [' + process_nm + '] ' + (options.message ? options.message : '') + (options.meta && Object.keys(options.meta).length ? JSON.stringify(options.meta) : '');

@@ -1,0 +1,15 @@
+{
+	"name": "loggar_nodejs_schedule",
+	"version": "0.1.0",
+	"scripts": {
+		"start": "node src/app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "charly.loggar@gmail.com",
+	"license": "MIT",
+	"dependencies": {
+		"node-schedule": "^1.3.0"
+	},
+	"devDependencies": {}
+}

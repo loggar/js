@@ -66,3 +66,40 @@ var s7 = (function () {
 	});
 })();
 
+/*
+Object Literal Syntax
+*/
+
+var s8 = schedule.scheduleJob({ hour: 14, minute: 30, dayOfWeek: 0 }, function () {
+	console.log(new Date(), 'Object Literal Syntax');
+});
+
+/*
+Set StartTime and EndTime
+*/
+
+var s9 = (function () {
+	let startTime = new Date(Date.now() + 5000);
+	let endTime = new Date(startTime.getTime() + 5000);
+	var j = schedule.scheduleJob({ start: startTime, end: endTime, rule: '*/1 * * * * *' }, function () {
+		console.log(new Date(), 'Set StartTime and EndTime');
+	});
+	return j;
+})();
+
+/*
+Handle Jobs and Job Invocations
+*/
+
+s9.cancel();
+
+/*
+job.cancelNext(reshedule)
+This method invalidates the next planned invocation or the job. When you set the parameter reschedule to true then the Job is newly scheduled afterwards.
+
+job.reschedule(spec)
+This method cancels all pending invocation and registers the Job completely new again using the given specification. Return true/false on success/failure.
+
+job.nextInvocation()
+This method returns a Date object for the planned next Invocation for this Job. If no invocation is planned the method returns null.
+*/

@@ -9,7 +9,7 @@ logger.debug(dir);
 var root = path.normalize(dir + "/../..");
 logger.debug(root);
 
-var root2 = path.resolve(dir, "../../");
+var root2 = path.resolve(dir, "../../abc.txt");
 logger.debug(root2);
 
 logger.debug(dir.split(path.seq)); // "?"

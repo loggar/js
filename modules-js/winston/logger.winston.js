@@ -8,40 +8,51 @@ var winston = require('winston');
 require('winston-daily-rotate-file');
 var dateFormat = require('dateformat');
 var path = require('path');
-var env_mode = process.env.ENV || "developement";
+var env_mode = process.env.ENV || 'developement';
 
-module.exports = function (process_nm) {
+module.exports = function (process_nm, log_level, file_mode, file_path) {
 	if (!process_nm) process_nm = 'unknown';
 	else process_nm = path.basename(process_nm, '.js');
+	log_level = log_level || 'debug'
+	file_path = file_path || './_log/tmp';
+	file_mode = file_mode || 0;
 
-	var timestamp = (function () {
-		return dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
-	})();
+	var timestamp = function () {
+		return dateFormat(new Date(), 'yyyy-mm-dd hh:MM:ss');
+	};
 
 	var formatter = function (options) {
-		return options.timestamp() + ' [' + options.level.toUpperCase()[0] + '] [' + process_nm + '] ' + (options.message ? options.message : '') + (options.meta && Object.keys(options.meta).length ? JSON.stringify(options.meta) : '');
+		return timestamp() + ' [' + options.level.toUpperCase()[0] + '] [' + process_nm + '] ' + (options.message ? options.message : '') + (options.meta && Object.keys(options.meta).length ? JSON.stringify(options.meta) : '');
 	}
 
 	var transportConsole = new (winston.transports.Console)({
-		level: 'debug', /* { error: 0, warn: 1, info: 2, verbose: 3, debug: 4, silly: 5 } */
+		level: log_level, /* { error: 0, warn: 1, info: 2, verbose: 3, debug: 4, silly: 5 } */
 		json: false, /* true : will log out multi-line JSON objects */
 		stringify: false,
 		timestamp: timestamp,
 		formatter: formatter
 	});
 
+	var transportFile = new winston.transports.File({
+		filename: file_path,
+		level: 'error'
+	});
+
 	var transportDailyRotateFile = new (winston.transports.DailyRotateFile)({
-		filename: './modules-server/winston/log/log',
-		datePattern: 'yyyy-MM-dd.',
-		prepend: true,
-		level: 'info',
+		filename: file_path,
+		datePattern: '.yyyy-MM-dd',
+		prepend: false,
+		level: log_level,
 		json: false,
 		stringify: false,
 		timestamp: timestamp,
 		formatter: formatter
 	});
 
-	var transports = env_mode === "developement" ? [transportConsole] : [transportDailyRotateFile];
+	var transports = env_mode === 'developement' ? [transportConsole] : [transportDailyRotateFile];
+	if (file_mode === 1) {
+		transports = [transportDailyRotateFile];
+	}
 
 	return new (winston.Logger)({ transports: transports });
 }

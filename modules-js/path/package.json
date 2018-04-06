@@ -1,0 +1,8 @@
+{
+	"name": "loggar_nodejs_path",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"path": "~0.12.7"
+	}
+}

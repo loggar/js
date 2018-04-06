@@ -1,4 +1,4 @@
-var {is, not} = require("../../modules-lib/loggar-test/simple-test.js");
+var {is, not} = require("../../modules-js/loggar-test/simple-test.js");
 
 /* year and semester 3 */
 var trimester_c = "0217";

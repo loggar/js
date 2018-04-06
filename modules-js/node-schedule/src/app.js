@@ -4,7 +4,7 @@ var schedule = require('node-schedule');
 Cron-style Scheduling
 */
 
-var s1 = schedule.scheduleJob('42 * * * * *', function () {
+var s1 = schedule.scheduleJob('10 * * * * *', function () {
 	console.log(new Date(), '10 * * * * *');
 });
 

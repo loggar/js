@@ -8,8 +8,14 @@ var winston = require('winston');
 require('winston-daily-rotate-file');
 var dateFormat = require('dateformat');
 var path = require('path');
-var env_mode = process.env.ENV || 'developement';
 
+/**
+ * 
+ * @param {*} process_nm 
+ * @param {*} log_level 
+ * @param {*} file_mode 0:Console, 1:DailyRotateFile, 2.File
+ * @param {*} file_path 
+ */
 module.exports = function (process_nm, log_level, file_mode, file_path) {
 	if (!process_nm) process_nm = 'unknown';
 	else process_nm = path.basename(process_nm, '.js');
@@ -35,7 +41,11 @@ module.exports = function (process_nm, log_level, file_mode, file_path) {
 
 	var transportFile = new winston.transports.File({
 		filename: file_path,
-		level: 'error'
+		level: log_level,
+		json: false,
+		stringify: false,
+		timestamp: timestamp,
+		formatter: formatter
 	});
 
 	var transportDailyRotateFile = new (winston.transports.DailyRotateFile)({
@@ -49,9 +59,13 @@ module.exports = function (process_nm, log_level, file_mode, file_path) {
 		formatter: formatter
 	});
 
-	var transports = env_mode === 'developement' ? [transportConsole] : [transportDailyRotateFile];
+	var transports = null;
 	if (file_mode === 1) {
 		transports = [transportDailyRotateFile];
+	} else if (file_mode === 2) {
+		transports = [transportFile];
+	} else {
+		transports = [transportConsole];
 	}
 
 	return new (winston.Logger)({ transports: transports });

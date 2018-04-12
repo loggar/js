@@ -1,0 +1,1 @@
+module.exports = `SELECT 1 AS DATA_1`;

@@ -24,7 +24,7 @@ module.exports = function (process_nm, log_level, file_mode, file_path) {
 	file_mode = file_mode || 0;
 
 	var timestamp = function () {
-		return dateFormat(new Date(), 'yyyy-mm-dd hh:MM:ss');
+		return dateFormat(new Date(), 'yyyy-mm-dd HH:MM:ss');
 	};
 
 	var formatter = function (options) {

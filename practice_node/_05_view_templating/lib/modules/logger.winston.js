@@ -12,7 +12,7 @@ module.exports = function(filename) {
 			json: false, /* true : will log out multi-line JSON objects */
 			stringify: false,
 			timestamp : function() {
-				return dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
+				return dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss");
 			},
 			formatter : function(options) {
 				return options.timestamp() + ' [' + options.level.toUpperCase() + ']' + ' [' + filename + '] ' + (options.message ? options.message : '') + (options.meta && Object.keys(options.meta).length ? JSON.stringify(options.meta) : '');

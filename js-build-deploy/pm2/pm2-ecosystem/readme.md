@@ -146,7 +146,14 @@ $ systemd-analyze plot > output.svg
 To wait efficiently that machine is online for PM2 to run:
 
 ```
-To wait efficiently that machine is online for PM2 to run:
+[Unit]
+Wants=network-online.target
+After=network.target network-online.target
+
+[....]
+
+[Install]
+WantedBy=multi-user.target network-online.target
 ```
 
 ## Disabling Ecosystem of Application Jobs

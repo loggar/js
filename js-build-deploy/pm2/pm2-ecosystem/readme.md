@@ -1,5 +1,12 @@
 # SIMS - Job Scheduler
 
+## Service Specification
+
+- Node.JS Runtime v8.10.0
+- Package Manager npm 5.6.0
+- Node Version Manager 0.33.8
+- Process Manager pm2 2.10.2
+
 ## Install NodeJS
 
 Install git
@@ -157,5 +164,3 @@ $ pm2 stop all
 
 $ pm2 delete all
 ```
-
-

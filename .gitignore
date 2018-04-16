@@ -48,6 +48,3 @@ _temp
 
 # visual studio code
 .vscode
-
-# npm generated
-package-lock.json

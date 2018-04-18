@@ -23,7 +23,7 @@ const tasks = [
 	}),
 ];
 
-return tasks.reduce((promiseChain, currentTask) => {
+var p = tasks.reduce((promiseChain, currentTask) => {
 	return promiseChain.then(chainResults =>
 		currentTask.then(currentResult => {
 			console.log(currentResult);
@@ -32,4 +32,12 @@ return tasks.reduce((promiseChain, currentTask) => {
 	);
 }, Promise.resolve([])).then(arrayOfResults => {
 	console.log(arrayOfResults);
+	var temp = 0;
+	arrayOfResults.forEach(element => {
+		temp += element;
+	});
+	return temp;
 });
+
+console.log(p);
+setTimeout(() => console.log(p), 1);

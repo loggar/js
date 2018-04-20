@@ -8,13 +8,15 @@
 </head>
 
 <body>
-	<object id="myfile" data="./myfile.pdf" type="application/pdf" width="100%">
-	</object>
-	<script type=" text/javascript ">
+	<div id="container">
+		<object id="myfile" data="./myfile.pdf" type="application/pdf" width="100%">
+		</object>
+	</div>
+	<script type="text/javascript ">
 		$(document).ready(function () {
-			$('#myfile').attr('height', $(window).height() - 30);
+			$('#container').attr('height', $(window).height() - 30);
 			$(window).resize(function () {
-				$('#myfile').attr('height', $(window).height() - 30);
+				$('#container').attr('height', $(window).height() - 30);
 			});
 		});
 	</script>

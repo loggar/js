@@ -3,11 +3,11 @@
 'use strict';
 
 var express = require('express'),
-  logger = require('../request-logger.js'),
-  noCache = require('connect-cache-control'),
-  log = logger(),
-  app = express(),
-  port = 3000;
+	logger = require('../request-logger.js'),
+	noCache = require('connect-cache-control'),
+	log = logger(),
+	app = express(),
+	port = 3000;
 
 app.use(log.requestLogger());
 
@@ -19,6 +19,6 @@ app.use(log.requestLogger());
 // OK message from its cache.
 app.get('/log.gif', noCache, log.route());
 
-app.listen(port, function() {
-  log.info('Listening on port ' + port);
+app.listen(port, function () {
+	log.info('Listening on port ' + port);
 });

@@ -6,7 +6,8 @@ function bind(fn, ctx/* , arg1, arg2 */) {
 			return fn.apply(ctx, args);
 		};
 	})(Array.prototype.slice.call(arguments, 2));
+}
 
-	// Usage
-	// anotherArg is first arg to onClick, then the event
-	bind(this.onClick, this, anotherArg);
+// Usage
+// anotherArg is first arg to onClick, then the event
+bind(this.onClick, this, anotherArg);

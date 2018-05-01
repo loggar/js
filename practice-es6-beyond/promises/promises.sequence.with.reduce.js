@@ -1,4 +1,5 @@
 /*
+// sample usage
 const tasks = getTaskArray();
 return tasks.reduce((promiseChain, currentTask) => {
     return promiseChain.then(chainResults =>

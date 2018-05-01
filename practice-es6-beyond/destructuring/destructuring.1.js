@@ -1,3 +1,19 @@
+// Before:
+var width = 200;
+var height = 400;
+
+// After:
+let [width, height] = [200, 400];
+
+
+function get() {
+	return ['42', 'success'];
+}
+
+// Return two variables from function at the same time:
+let [count, status] = get();
+
+
 function foo() {
 	return [1, 2, 3];
 }
@@ -27,5 +43,5 @@ console.log(x, y, z);                // 4 5 6
 
 
 var { bar_x, bar_y, bar_z } = bar();
-console.log( bar_x, bar_y, bar_z );
+console.log(bar_x, bar_y, bar_z);
 

@@ -1,3 +1,12 @@
+function sample_usage(response, account) {
+	// Before: 
+	let msg = 'Thanks for uploading ' + response.filename + '.jpg. Your account is ' + account.status + '.';
+
+	// After:
+	let msg2 = `Thanks for uploading ${response.filename}.jpg. Your account is ${account.status}.`;
+}
+
+
 var name = "Kyle";
 
 var greeting = `Hello ${name}!`;

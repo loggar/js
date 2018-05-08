@@ -1,7 +1,7 @@
 var sass = require('node-sass');
 
 sass.render({
-	file: '/src/myFile.scss',
+	file: '/src/file.1.scss',
 	data: 'body{background:blue; a{color:black;}}',
 	importer: function (url, prev, done) {
 		// url is the path in import as is, which LibSass encountered.

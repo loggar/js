@@ -1,7 +1,7 @@
 var sass = require('node-sass');
 
 var result = sass.renderSync({
-	file: '/src/file.scss',
+	file: '/src/file.2.scss',
 	data: 'body{background:blue; a{color:black;}}',
 	outputStyle: 'compressed',
 	outFile: '/to/my/output.css',

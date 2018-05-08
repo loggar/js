@@ -19,3 +19,6 @@ function selectorMatches(el, selector) {
 	};
 	return f.call(el, selector);
 }
+
+// Usage
+matchesSelector(document.getElementById('myDiv'), 'div.someSelector[some-attribute=true]');

@@ -1,0 +1,12 @@
+{
+	"extends": "./node_modules/eslint-config-google/index.js",
+	"env": {
+		"browser": 1
+	},
+	"globals": {
+		
+	},
+	"rules": {
+		"strict": 0
+	}
+}

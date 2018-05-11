@@ -1,5 +1,5 @@
 var obj = { a: 1, b: 2 },
-	handlers = { .. },
+	handlers = { /* ... */ },
 	pobj = new Proxy(obj, handlers);
 
 typeof obj;

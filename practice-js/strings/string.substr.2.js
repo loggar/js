@@ -20,7 +20,7 @@ var str = "0316";
 console.log(!isNaN(str) && str.length === 4);
 console.log(reverse(str));
 
-/* substring */
+/* substr */
 var str = "ACC707LAT20117";
 
 console.log(str[8]);

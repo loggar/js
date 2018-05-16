@@ -1,7 +1,7 @@
 # log
 *.log
 npm-debug.log*
-_log/
+_log
 
 # grunt intermediate storage
 .grunt

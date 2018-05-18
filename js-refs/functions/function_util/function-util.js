@@ -1,4 +1,4 @@
-var util_function = (function () {
+var function_util = (function () {
     return {
         isFunction: function (f) {
             return Object.prototype.toString.call(f) === "[object Function]";
@@ -6,5 +6,5 @@ var util_function = (function () {
     }
 })();
 
-module.exports = util_function;
+module.exports = function_util;
 

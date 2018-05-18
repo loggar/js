@@ -1,4 +1,4 @@
-var isFunction = require("./is_function.js").isFunction;
+var isFunction = require("./function_util.js").isFunction;
 
 var f = function () {
     console.log("this is function");

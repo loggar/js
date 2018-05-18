@@ -1,4 +1,4 @@
-/*
+```
 \0 The NUL character (\u0000)
 \t Tab (\u0009)
 \n Newline (\u000A)
@@ -44,4 +44,4 @@ $ Match the end of the string and, in multiline searches, the end of a line.
 i Perform case-insensitive matching.
 g Perform a global match—that is, find all matches rather than stopping after the first match.
 m Multiline mode. ^ matches beginning of line or beginning of string, and $ matches end of line or end of string.
-*/
+```

@@ -1,15 +1,13 @@
 {
-	"name": "loggar_nodejs_persist",
+	"name": "loggar_phantomjs-prebuilt",
 	"version": "0.1.0",
+	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
-	"author": "charly.loggar@gmail.com",
-	"license": "MIT",
 	"dependencies": {
-		"node-persist": "^2.1.0"
+		"phantomjs-prebuilt": "^2.1.16"
 	},
 	"devDependencies": {}
 }

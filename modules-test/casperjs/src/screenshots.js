@@ -14,7 +14,7 @@ function getLinks() {
 }
 
 casper.start('http://google.fr/', function() {
-	var fileLocate = 'screenShotTest/1.jpg';
+	var fileLocate = 'screenshots_test/1.jpg';
 	this.captureSelector(fileLocate, "html");
 	this.fill('form[action="/search"]', {
 		q : 'seotory'
@@ -22,7 +22,7 @@ casper.start('http://google.fr/', function() {
 });
 
 casper.then(function() {
-	var fileLocate = 'screenShotTest/2.jpg';
+	var fileLocate = 'screenshots_test/2.jpg';
 	this.captureSelector(fileLocate, "html");
 	links = this.evaluate(getLinks);
 	this.fill('form[action="/search"]', {
@@ -31,7 +31,7 @@ casper.then(function() {
 });
 
 casper.then(function() {
-	var fileLocate = 'screenShotTest/3.jpg';
+	var fileLocate = 'screenshots_test/3.jpg';
 	this.captureSelector(fileLocate, "html");
 	links = links.concat(this.evaluate(getLinks));
 });

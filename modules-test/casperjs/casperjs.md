@@ -1,23 +1,26 @@
 # casperjs
 
-## install phantomjs
-npm install phantomjs -g
-phantomjs --help
+## install PhantomJS
+```
+npm install phantomjs-prebuilt -g
+phantomjs.cmd --version
+```
 
 ## install python]
+
+Install python and set windows PATH
+
 ```
-https://www.python.org/downloads/windows/
-windows set PATH python
-python --help
+python --version
 ```
 
-## install casperjs
+## install CasperJS
 ```
-$ npm install casper -g
-$ casperjs --help
+$ npm install casperjs -g
+$ casperjs.cmd --version
 ```
 
 ## run
 ```
-$ node app.js
+$ node ./src/app.js
 ```

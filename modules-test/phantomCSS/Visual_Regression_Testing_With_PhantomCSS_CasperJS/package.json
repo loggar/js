@@ -1,0 +1,13 @@
+{
+	"name": "practice-node-commander",
+	"version": "0.1.0",
+	"main": "app.js",
+	"scripts": {
+		"start": "http-server",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"http-server": "^0.11.1"
+	}
+}

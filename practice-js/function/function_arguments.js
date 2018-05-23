@@ -1,9 +1,9 @@
 function iterate_for_in(obj_or_arr) {
 	var str = "{";
-	for(prop_or_index in obj_or_arr) {
+	for (prop_or_index in obj_or_arr) {
 		str += (prop_or_index + ":" + obj_or_arr[prop_or_index] + ", ");
 	}
-	return str.substring(0, str.length-2) + "}";
+	return str.substring(0, str.length - 2) + "}";
 }
 
 /**
@@ -12,12 +12,12 @@ function iterate_for_in(obj_or_arr) {
  * @returns
  */
 function factorialFunc() {
-	return function(x) {
+	return function (x) {
 		console.log("call functino(" + x + ")");
 		console.log(typeof arguments + " " + arguments + " " + iterate_for_in(arguments));
 		console.log(typeof arguments.callee + " " + arguments.callee);
-		if(x <= 1) return 1;
-		return x * arguments.callee(x-1);
+		if (x <= 1) return 1;
+		return x * arguments.callee(x - 1);
 	}
 }
 
@@ -28,23 +28,23 @@ function publicVariableScope() {
 	var obj = new Object();
 	obj.desc = "I am object";
 	console.log(typeof obj + ": " + obj + ": " + iterate_for_in(obj));
-	
-	var add = function(x,y) {
+
+	var add = function (x, y) {
 		try {
-			console.log("add.desc: " + add.desc); // ReferenceError 예상.
+			console.log("add.desc: " + add.desc); // ReferenceError expected.
 			console.log("arguments.callee.desc: " + arguments.callee.desc); // Runtime referencing. it is working.
-		} catch(e) {
-			// ? ReferenceError 예상했으나 발생하지 않았음.
+		} catch (e) {
+			// ? ReferenceError expected, but did not occur.
 			console.log(e);
 		}
-		
-		return x+y;
+
+		return x + y;
 	}
 	add.desc = "i am function";
 	console.log(typeof add + ": " + add);
-	
-	console.log(add(1,2));
-	
+
+	console.log(add(1, 2));
+
 }
 
 /* test code */

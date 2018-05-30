@@ -16,9 +16,9 @@
 module.exports = (function () {
     return {
         user: 'sa',
-        password: 'users#2',
-        server: '10.1.10.53', // You can use 'localhost\\instance' to connect to named instance 
-        database: 'KOI_SIMS_TEST',
+        password: 'xxxxxxxx',
+        server: '127.0.0.1', // You can use 'localhost\\instance' to connect to named instance 
+        database: 'DB_NAME',
 
         options: {
             // encrypt: true // Use this if you're on Windows Azure 

@@ -1,6 +1,5 @@
 /**
  * js logger with winston
- * @author Charly Lee <charly.lee@koi.edu.au>
  * @description format style
  * @version 0.1.1
  */

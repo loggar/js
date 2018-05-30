@@ -1,6 +1,5 @@
 /**
  * mail sender
- * @author Charly Lee <charly.lee@koi.edu.au>
  * @description with gmail smtp
  * @version 0.1.1
  */
@@ -16,8 +15,8 @@ var transporter = nodemailer.createTransport(smtpTransport({
 	service: 'gmail',
 	host: 'smtp.gmail.com',
 	auth: {
-		user: 'koi-noreply@koi.edu.au',
-		pass: 'uPr7A=Z='
+		user: 'noreply@example.com',
+		pass: 'xxxxxxxx'
 	}
 }));
 

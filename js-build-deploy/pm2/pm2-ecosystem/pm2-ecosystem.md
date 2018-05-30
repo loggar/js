@@ -1,4 +1,4 @@
-# SIMS - Job Scheduler
+# Job Scheduler
 
 ## Service Specification
 
@@ -60,7 +60,7 @@ $ npm install
 apps: [
 	{
 		name: "track-attend-record",
-		script: "./src-jobs/track-attend-record.js",
+		script: "./project_1/src-jobs/track-attend-record.js",
 		watch: true,
 		env: {
 			"PORT": 29110,
@@ -73,7 +73,7 @@ apps: [
 	},
 	{
 		name: "validate-del-flag",
-		script: "./src-jobs/validate-del-flag.js",
+		script: "./project_1/src-jobs/validate-del-flag.js",
 		watch: true,
 		env: {
 			"PORT": 29120,

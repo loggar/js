@@ -5,7 +5,7 @@ var logger = env_mode !== 'production' ? require('../lib/logger.winston')(__file
 var nl = require('../lib/os.simple').nl;
 var getConnection = require('../lib/connection.mysql.simple');
 var mailSender = require('../lib/mail.smtp.gmail');
-var mailAddr = require('../lib/koi/mail-address');
+var mailAddr = require('../lib-resources/mail-address');
 var schedule = require('node-schedule');
 
 var sql_call = 'CALL getTableNamesHaveBadDelFlag()';
@@ -23,7 +23,7 @@ var run = function () {
 			mailSender.send({
 				from: mailAddr.job_scheduler,
 				to: mailAddr.testers,
-				subject: '[SIMS-DB-' + env_mode + '] Unexpected DEL_FLAG value Detected.',
+				subject: '[DB-' + env_mode + '] Unexpected DEL_FLAG value Detected.',
 				text: result_formatt_str
 			});
 		} else {

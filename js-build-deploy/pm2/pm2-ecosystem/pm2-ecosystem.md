@@ -46,7 +46,7 @@ $ pm2 ls
 
 ## Deploy Applications
 
-> ~/job_schedulers
+> ~/project_1
 
 ```
 $ npm install

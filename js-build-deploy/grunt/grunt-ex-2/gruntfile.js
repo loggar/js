@@ -1,10 +1,4 @@
-/*!
- * Grunt
- * $ npm install grunt-contrib-uglify grunt-autoprefixer grunt-contrib-cssmin grunt-contrib-imagemin grunt-contrib-sass grunt-contrib-watch grunt-contrib-concat grunt-contrib-clean grunt-contrib-jshint grunt-notify --save-dev
- */
-
 module.exports = function (grunt) {
-
 	grunt.initConfig({
 
 		// Sass

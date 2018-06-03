@@ -44,7 +44,7 @@ build
 
 # test
 _test-output
-_temp
+_tmp
 
 # visual studio code
 .vscode

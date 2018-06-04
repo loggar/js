@@ -2,7 +2,7 @@ module.exports = {
 	apps: [
 		{
 			name: "track-attend-record",
-			script: "./project_1/src-jobs/track-attend-record.js",
+			script: "./job-schedulers/src-jobs/track-attend-record/track-attend-record.scheduler.js",
 			watch: false,
 			env: {
 				"PORT": 29110,
@@ -15,7 +15,7 @@ module.exports = {
 		},
 		{
 			name: "validate-del-flag",
-			script: "./project_1/src-jobs/validate-del-flag.js",
+			script: "./job-schedulers/src-jobs/validate-del-flag/validate-del-flag.scheduler.js",
 			watch: false,
 			env: {
 				"PORT": 29120,

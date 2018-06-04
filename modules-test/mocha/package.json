@@ -5,9 +5,6 @@
 		"start": "node app.js",
 		"test": "mocha ./src-test"
 	},
-	"keywords": [],
-	"author": "charly.loggar@gmail.com",
-	"license": "MIT",
 	"dependencies": {
 		"express": "^4.15.4"
 	},

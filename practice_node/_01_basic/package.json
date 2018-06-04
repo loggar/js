@@ -9,11 +9,5 @@
 	  "mongoose": "*",
 	  "express" : "*",
 	  "morgan" : "*"
-  },
-  "repository": "",
-  "keywords": [
-  ],
-  "author": "charly.loggar@gmail.com",
-  "license": "MIT",
-  "readmeFilename": "README.md"
+  }
 }

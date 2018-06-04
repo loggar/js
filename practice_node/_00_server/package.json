@@ -5,11 +5,5 @@
     "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
   },
   "dependencies": {
-  },
-  "repository": "",
-  "keywords": [
-  ],
-  "author": "charly.loggar@gmail.com",
-  "license": "MIT",
-  "readmeFilename": "README.md"
+  }
 }

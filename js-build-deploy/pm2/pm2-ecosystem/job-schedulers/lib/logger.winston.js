@@ -1,5 +1,6 @@
 /**
  * js logger with winston
+ * @author Charly Lee <charly.loggar@gmail.com>
  * @description format style
  * @version 0.1.1
  */

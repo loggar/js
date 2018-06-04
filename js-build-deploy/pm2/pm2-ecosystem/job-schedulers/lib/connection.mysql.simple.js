@@ -1,10 +1,17 @@
 var env_mode = process.env.NODE_ENV || 'developement';
 var path = require('path');
-var log_dir = path.resolve(__dirname, '../') + '/_log/';
-var logger = env_mode !== 'production' ? require('./logger.winston')(__filename || 'Process Name', 'debug', 0) : require('./logger.winston')(__filename || 'Process Name', 'info', 2, log_dir + require('path').basename(__filename) + '.log');
+var winston = require('./logger.winston');
+var dirs = require('../lib-resources/dirs');
+var log_file = path.resolve(dirs.dirProjectRoot(env_mode), dirs.dirLog(), path.basename(__filename)) + '.log';
+var logger = env_mode !== 'production' ?
+	winston(__filename || 'Process Name', 'debug', 0) :
+	winston(__filename || 'Process Name', 'info', 2, log_file);
+
 var mysql = require('mysql');
 
-var datasource = env_mode !== 'production' ? require('../lib-resources/mysql.datasources').dev : require('./team/mysql.datasources').production;
+var datasource = env_mode !== 'production' ?
+	require('../lib-resources/mysql.datasources').dev :
+	require('../lib-resources/mysql.datasources').production;
 
 function initializeConnection(config) {
 	function addDisconnectHandler(c) {

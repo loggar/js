@@ -1,8 +1,9 @@
 {
 	"name": "job-schedulers",
 	"version": "0.1.0",
+	"author": "Charly Lee <charly.loggar@gmail.com>",
 	"scripts": {
-		"start": "node src-jobs/validate-del-flag.js",
+		"start": "node src-jobs/validate-del-flag/validate-del-flag.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {

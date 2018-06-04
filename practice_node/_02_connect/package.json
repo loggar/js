@@ -8,11 +8,5 @@
 	  "connect": "*",
 	  "cookie-parser": "*",
 	  "body-parser": "*"
-  },
-  "repository": "",
-  "keywords": [
-  ],
-  "author": "charly.loggar@gmail.com",
-  "license": "MIT",
-  "readmeFilename": "README.md"
+  }
 }

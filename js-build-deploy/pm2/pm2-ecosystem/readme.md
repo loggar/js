@@ -1,4 +1,4 @@
-# Job Scheduler
+# SIMS - Job Scheduler
 
 ## Service Specification
 
@@ -21,7 +21,7 @@ Download nvm
 $ git clone git://github.com/creationix/nvm.git ~/.nvm
 ```
 
-Install nvm
+Run nvm
 
 ```
 $ source /root/.nvm/nvm.sh
@@ -46,7 +46,7 @@ $ pm2 ls
 
 ## Deploy Applications
 
-> ~/project_1
+> ~/job_schedulers
 
 ```
 $ npm install
@@ -57,34 +57,36 @@ $ npm install
 > ecosystem.config.js
 
 ```
-apps: [
-	{
-		name: "track-attend-record",
-		script: "./project_1/src-jobs/track-attend-record.js",
-		watch: true,
-		env: {
-			"PORT": 29110,
-			"NODE_ENV": "development"
+module.exports = {
+	apps: [
+		{
+			name: "track-attend-record",
+			script: "./job-schedulers/src-jobs/track-attend-record/track-attend-record.scheduler.js",
+			watch: false,
+			env: {
+				"PORT": 29110,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 29110,
+				"NODE_ENV": "production",
+			}
 		},
-		env_production: {
-			"PORT": 29110,
-			"NODE_ENV": "production",
+		{
+			name: "validate-del-flag",
+			script: "./job-schedulers/src-jobs/validate-del-flag/validate-del-flag.scheduler.js",
+			watch: false,
+			env: {
+				"PORT": 29120,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 29120,
+				"NODE_ENV": "production",
+			}
 		}
-	},
-	{
-		name: "validate-del-flag",
-		script: "./project_1/src-jobs/validate-del-flag.js",
-		watch: true,
-		env: {
-			"PORT": 29120,
-			"NODE_ENV": "development"
-		},
-		env_production: {
-			"PORT": 29120,
-			"NODE_ENV": "production",
-		}
-	}
-]
+	]
+}
 ```
 
 Start Application Jobs with env option.
@@ -135,10 +137,13 @@ $ pm2 startup
 ```
 # Check if pm2-<USER> service has been added
 $ systemctl list-units
+
 # Check logs
 $ journalctl -u pm2-<USER>
+
 # Cat systemd configuration file
 $ systemctl cat pm2-<USER>
+
 # Analyze startup
 $ systemd-analyze plot > output.svg
 ```

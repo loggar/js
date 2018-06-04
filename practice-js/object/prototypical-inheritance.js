@@ -49,7 +49,6 @@ var pet2 = new Dog("germanShepard", animalGroups.MAMMAL);
 pet2.shout();
 console.log(pet.constructor);
 
-
 /*
 Class properties are bound using this
 Class methods are bound using prototype object

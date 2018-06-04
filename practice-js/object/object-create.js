@@ -1,12 +1,12 @@
 if (!Object.create) {
-  Object.create = function(o) {
-    if (!o)
-      throw new Error("invalid object");
-    function F() {
-    }
-    F.prototype = o;
-    return new F();
-  }
+	Object.create = function (o) {
+		if (!o)
+			throw new Error("invalid object");
+		function F() {
+		}
+		F.prototype = o;
+		return new F();
+	}
 }
 
 /* test */

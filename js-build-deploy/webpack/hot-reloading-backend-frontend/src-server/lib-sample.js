@@ -1,6 +1,6 @@
 var sample = {
 	fn1: function () {
-		return 12;
+		return 14;
 	}
 }
 

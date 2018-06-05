@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const StartServerPlugin = require('start-server-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	entry: [
@@ -30,6 +31,7 @@ module.exports = {
 				"BUILD_TARGET": JSON.stringify('server')
 			}
 		}),
+		new CleanWebpackPlugin(['.build']),
 	],
 	output: {
 		path: path.join(__dirname, '.build'),

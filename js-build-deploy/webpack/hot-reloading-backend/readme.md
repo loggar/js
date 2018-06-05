@@ -18,7 +18,8 @@ npm install express --save
 			{
 				"modules": false
 			}
-		]
+		],
+		"react"
 	]
 }
 ```
@@ -105,7 +106,7 @@ npm script
 ```
 // package.json
 
-"start:server:dev": "rm -rf ./build && webpack --mode development --config webpack.config.server.js"
+"start:server:dev": webpack --mode development --config webpack.config.server.js"
 ```
 
 run webpack
@@ -113,25 +114,5 @@ run webpack
 ```
 npm run start:server:dev
 
-> webpack-hot-reloading-backend@0.1.0 start:server:dev C:\Users\webnl\Documents\_workspace_js\loggar_js\js-build-deploy\webpack\webpack-hot-reloading-backend
-> rm -rf ./build && webpack --mode development --config webpack.config.server.js
-
-i ｢webpack｣: Watching enabled
-i ｢webpack｣: Build Finished
-
-webpack v4.10.2
-
-378ef8b65f6fef2f8e35
-  size     name                 module                                        status
-  1.3 kB   log-apply-result.js  (webpack)/hot/log-apply-result.js             built
-  1.01 kB  log.js               (webpack)/hot/log.js                          built
-  1.15 kB  poll.js?1000         (webpack)/hot/poll.js?1000                    built
-  170 B    app.js               ./src-server/app.js                           built
-  42 B     express              external "express"                            built
-  40 B     0                    multi webpack/hot/poll?1000 ./src-server/app  built
-
-  size     name                 asset                                         status
-  33.9 kB  main                 app.js                                        emitted
-
-  Δt 1313ms
+http://localhost:3000/api
 ```

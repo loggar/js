@@ -3,7 +3,7 @@
 install
 
 ```
-npm install webpack babel-loader babel-core babel-preset-env webpack-command webpack-node-externals start-server-webpack-plugin --save-dev
+npm install webpack babel-loader babel-core babel-preset-env webpack-command webpack-node-externals start-server-webpack-plugin clean-webpack-plugin --save-dev
 
 npm install express --save
 ```
@@ -125,7 +125,7 @@ npm script
 ```
 // package.json
 
-"start:server:dev": webpack --mode development --config webpack.config.server.js"
+"start:server:dev": "webpack --mode development --config webpack.config.server.js"
 ```
 
 run webpack

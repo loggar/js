@@ -31,6 +31,7 @@ const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const StartServerPlugin = require('start-server-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	entry: [
@@ -59,6 +60,7 @@ module.exports = {
 				"BUILD_TARGET": JSON.stringify('server')
 			}
 		}),
+		new CleanWebpackPlugin(['.build']),
 	],
 	output: {
 		path: path.join(__dirname, '.build'),
@@ -67,16 +69,33 @@ module.exports = {
 }
 ```
 
+backend module
+
+```
+//src-server/lib-sample.js
+
+var sample = {
+	fn1: function () {
+		return 12;
+	}
+}
+
+export default sample
+```
+
 backend entry
 
 ```
 // src-server/app.js
 
 import express from 'express'
+import sample from './lib-sample'
+
 const app = express()
 app.get('/api', (req, res) => {
 	res.send({
-		message: 'version hot reloaded : 001'
+		message: 'server hot reloaded version: 003',
+		sample: sample.fn1()
 	})
 })
 export default app

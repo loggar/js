@@ -1,6 +1,6 @@
 # webpack-hot-reloading-backend
 
-## webpack confituration
+install
 
 ```
 npm install webpack babel-loader babel-core babel-preset-env webpack-command webpack-node-externals start-server-webpack-plugin --save-dev

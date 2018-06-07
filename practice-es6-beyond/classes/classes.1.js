@@ -26,3 +26,8 @@ b.x;                        // 5
 b.y;                        // 15
 b.z;                        // 25
 b.gimmeXYZ();                // 1875
+
+console.log(b.x);
+console.log(b.y);
+console.log(b.z);
+console.log(b.gimmeXYZ());

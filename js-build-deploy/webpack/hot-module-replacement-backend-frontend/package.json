@@ -1,7 +1,6 @@
 {
-	"name": "webpack-hot-reloading-backend-frontend",
+	"name": "hot-module-replacement-backend-frontend",
 	"version": "0.1.0",
-	"main": "app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start:server:dev": "webpack --mode development --config webpack.config.server.js",

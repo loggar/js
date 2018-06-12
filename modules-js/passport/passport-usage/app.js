@@ -3,6 +3,22 @@ var express = require('express'),
 	LocalStrategy = require('passport-local'),
 	app = express();
 
+var User = (function () {
+	var user = [{ username: "xxx" }];
+	var findOne = function (user, fn) {
+		fn(null, user[0]);
+	}
+
+	var findById = function (id, fn) {
+		fn(null, user[0]);
+	}
+
+	return {
+		findOne: findOne,
+		findById: findById
+	}
+})();
+
 /* Strategies */
 passport.use(new LocalStrategy(
 	function (username, password, done) {

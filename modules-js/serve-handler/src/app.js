@@ -12,6 +12,5 @@ const server = http.createServer((request, response) => {
 server.listen(port, () => {
 	var h = server.address().address;
 	var p = server.address().port;
-	console.log(server.address())
 	console.log('server listeninig at http://%s:%s', h, p);
 });

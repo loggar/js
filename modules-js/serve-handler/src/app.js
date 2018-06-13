@@ -4,8 +4,8 @@ const http = require('http');
 const port = process.env.PORT || 28101;
 
 const server = http.createServer((request, response) => {
-	return handler(request, response ,{
-		public : "/public"
+	return handler(request, response, {
+		public: "/public"
 	});
 })
 

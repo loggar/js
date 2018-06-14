@@ -67,65 +67,6 @@ $ npm install
 
 > ecosystem.config.js
 
-```
-module.exports = {
-	apps: [
-		{
-			name: "track-attend-record",
-			script: "./job-schedulers/src/track-attend-record/track-attend-record.scheduler.js",
-			watch: false,
-			env: {
-				"PORT": 29110,
-				"NODE_ENV": "development"
-			},
-			env_production: {
-				"PORT": 29110,
-				"NODE_ENV": "production",
-			}
-		},
-		{
-			name: "validate-del-flag",
-			script: "./job-schedulers/src/validate-del-flag/validate-del-flag.scheduler.js",
-			watch: false,
-			env: {
-				"PORT": 29120,
-				"NODE_ENV": "development"
-			},
-			env_production: {
-				"PORT": 29120,
-				"NODE_ENV": "production",
-			}
-		},
-		{
-			name: "serve-static",
-			script: "./serve-static/src/app_serve_static.js",
-			watch: false,
-			env: {
-				"PORT": 28101,
-				"NODE_ENV": "development"
-			},
-			env_production: {
-				"PORT": 28101,
-				"NODE_ENV": "production",
-			}
-		},
-		{
-			name: "current-class-enroll-status",
-			script: "./current-class-enroll-status/.dist/main.server-bundle.js",
-			watch: false,
-			env: {
-				"PORT": 28110,
-				"NODE_ENV": "development"
-			},
-			env_production: {
-				"PORT": 28110,
-				"NODE_ENV": "production",
-			}
-		}
-	]
-}
-```
-
 Start Application Jobs with env option.
 
 ```

@@ -187,3 +187,13 @@ $ pm2 stop all
 
 $ pm2 delete all
 ```
+
+## etc
+
+show pm2 logs
+
+http://pm2.keymetrics.io/docs/usage/log-management/
+
+```
+$ pm2 logs
+```

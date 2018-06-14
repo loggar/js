@@ -35,6 +35,17 @@ $ nvm install v8.10.0
 $ nvm ls
 ```
 
+## reset envs when..
+
+```
+$ npm --version
+bash: npm: command not found...
+
+$ source /root/.nvm/nvm.sh
+
+$ npm --version
+6.1.0
+```
 
 ## Install Ecosystem Manager
 
@@ -61,7 +72,7 @@ module.exports = {
 	apps: [
 		{
 			name: "track-attend-record",
-			script: "./job-schedulers/src-jobs/track-attend-record/track-attend-record.scheduler.js",
+			script: "./job-schedulers/src/track-attend-record/track-attend-record.scheduler.js",
 			watch: false,
 			env: {
 				"PORT": 29110,
@@ -74,7 +85,7 @@ module.exports = {
 		},
 		{
 			name: "validate-del-flag",
-			script: "./job-schedulers/src-jobs/validate-del-flag/validate-del-flag.scheduler.js",
+			script: "./job-schedulers/src/validate-del-flag/validate-del-flag.scheduler.js",
 			watch: false,
 			env: {
 				"PORT": 29120,

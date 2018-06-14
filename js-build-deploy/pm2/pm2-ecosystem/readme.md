@@ -1,4 +1,4 @@
-# SIMS - Job Scheduler
+# node - ecosystem with pm2
 
 ## Service Specification
 
@@ -95,6 +95,32 @@ module.exports = {
 				"PORT": 29120,
 				"NODE_ENV": "production",
 			}
+		},
+		{
+			name: "serve-static",
+			script: "./serve-static/src/app_serve_static.js",
+			watch: false,
+			env: {
+				"PORT": 28101,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 28101,
+				"NODE_ENV": "production",
+			}
+		},
+		{
+			name: "current-class-enroll-status",
+			script: "./current-class-enroll-status/.dist/main.server-bundle.js",
+			watch: false,
+			env: {
+				"PORT": 28110,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 28110,
+				"NODE_ENV": "production",
+			}
 		}
 	]
 }
@@ -103,10 +129,16 @@ module.exports = {
 Start Application Jobs with env option.
 
 ```
-$ pm2 start ecosystem.config.js
+$ pm2 start ecosystem.config.js --env development
 ```
 
-Or in production : 
+in imitation server
+
+```
+$ pm2 start ecosystem.config.js --env imitation
+```
+
+in production : 
 
 ```
 $ pm2 start ecosystem.config.js --env production

@@ -1,8 +1,8 @@
 /**
  * js logger with winston
- * @author Charly Lee <charly.loggar@gmail.com>
+ * @author Charly Lee <charly.lee@koi.edu.au>
  * @description format style
- * @version 0.0.1
+ * @version 0.1.1
  */
 var winston = require('winston');
 require('winston-daily-rotate-file');
@@ -16,7 +16,7 @@ var path = require('path');
  * @param {*} file_mode 0:Console, 1:DailyRotateFile, 2.File
  * @param {*} file_path 
  */
-module.exports = function (process_nm, log_level, file_mode, file_path) {
+var loggar_winston = function (process_nm, log_level, file_mode, file_path) {
 	if (!process_nm) process_nm = 'unknown';
 	else process_nm = path.basename(process_nm, '.js');
 	log_level = log_level || 'debug'
@@ -69,4 +69,14 @@ module.exports = function (process_nm, log_level, file_mode, file_path) {
 	}
 
 	return new (winston.Logger)({ transports: transports });
+}
+
+module.exports = {
+	init: function (env_mode, filename, log_file) {
+		if (env_mode !== 'production') {
+			return loggar_winston(filename || 'Process Name', 'debug', 0);
+		} else {
+			return loggar_winston(filename || 'Process Name', 'info', 1, log_file)
+		}
+	}
 }

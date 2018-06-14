@@ -1,7 +1,8 @@
-var logger = require('./logger.winston')(__filename || "Process Name");
+var env_mode = process.env.ENV || "developement";
+var log_file = './_log/test-winston.log';
+var logger = require('./logger.winston').init(env_mode, __filename, log_file);
 
 var appName = 'Test-Logger-Winston';
-var env_mode = process.env.ENV || "developement";
 
 logger.debug('application [%s] is starting in [%s] mode.');
 logger.info('application [%s] is starting in [%s] mode.', appName, env_mode);

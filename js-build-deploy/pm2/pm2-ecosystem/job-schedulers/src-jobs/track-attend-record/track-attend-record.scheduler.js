@@ -1,11 +1,7 @@
 var env_mode = process.env.NODE_ENV || 'developement';
-var path = require('path');
-var winston = require('../../lib/logger.winston');
-var dirs = require('../../lib-resources/dirs');
-var log_file = path.resolve(dirs.dirProjectRoot(env_mode), dirs.dirLog(), path.basename(__filename)) + '.log';
-var logger = env_mode !== 'production' ?
-	winston(__filename || 'Process Name', 'debug', 2, log_file) :
-	winston(__filename || 'Process Name', 'info', 1, log_file);
+var path = require("path");
+var log_file = require('../lib-resources/dirs').resolveLog(env_mode, path.basename(__filename));
+var logger = require('../lib/logger.winston').init(env_mode, __filename, log_file);
 
 var schedule = require('node-schedule');
 var run = require('./track-attend-record');

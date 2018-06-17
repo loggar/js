@@ -1,4 +1,4 @@
-# SIMS - Job Scheduler
+# node - ecosystem with pm2
 
 ## Service Specification
 
@@ -35,6 +35,17 @@ $ nvm install v8.10.0
 $ nvm ls
 ```
 
+## reset envs when..
+
+```
+$ npm --version
+bash: npm: command not found...
+
+$ source /root/.nvm/nvm.sh
+
+$ npm --version
+6.1.0
+```
 
 ## Install Ecosystem Manager
 
@@ -56,46 +67,19 @@ $ npm install
 
 > ecosystem.config.js
 
-```
-module.exports = {
-	apps: [
-		{
-			name: "track-attend-record",
-			script: "./job-schedulers/src-jobs/track-attend-record/track-attend-record.scheduler.js",
-			watch: false,
-			env: {
-				"PORT": 29110,
-				"NODE_ENV": "development"
-			},
-			env_production: {
-				"PORT": 29110,
-				"NODE_ENV": "production",
-			}
-		},
-		{
-			name: "validate-del-flag",
-			script: "./job-schedulers/src-jobs/validate-del-flag/validate-del-flag.scheduler.js",
-			watch: false,
-			env: {
-				"PORT": 29120,
-				"NODE_ENV": "development"
-			},
-			env_production: {
-				"PORT": 29120,
-				"NODE_ENV": "production",
-			}
-		}
-	]
-}
-```
-
 Start Application Jobs with env option.
 
 ```
-$ pm2 start ecosystem.config.js
+$ pm2 start ecosystem.config.js --env development
 ```
 
-Or in production : 
+in imitation server
+
+```
+$ pm2 start ecosystem.config.js --env imitation
+```
+
+in production : 
 
 ```
 $ pm2 start ecosystem.config.js --env production
@@ -175,4 +159,14 @@ Stop/Delete applications
 $ pm2 stop all
 
 $ pm2 delete all
+```
+
+## etc
+
+show pm2 logs
+
+http://pm2.keymetrics.io/docs/usage/log-management/
+
+```
+$ pm2 logs
 ```

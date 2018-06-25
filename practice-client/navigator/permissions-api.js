@@ -1,8 +1,4 @@
 /*
-https://davidwalsh.name/permissions-api
-*/
-
-/*
 Many of the functionalities that we're translated from mobile to the web require permission from the user.  Think about geolocation, audio/video access (think getUserMedia for camera access), and likewise APIs.  We can probably all agree that requiring permission for access to these APIs is a good thing, but I see a problem:  there's sometimes no way to access each APIs permission level without triggering a request to the user to get that information.  Obtrusive to say the least!
 
 I recently discovered the Permissions API which provides a method to query the permission level for an API without trigger a request to the user for access.  Let's look at a simple example:

@@ -1,6 +1,5 @@
-/*
-https://davidwalsh.name/catching-fatal-errors-nodejs-childprocess
-*/
+// https://davidwalsh.name/catching-fatal-errors-nodejs-childprocess
+
 /*
 I'm relatively new to hardcore Node.js hacking so I'm seeing all sorts of lovely new errors that I have no clue how to solve when I initially see them.
 To this point I've managed to keep a smile on my face while trying to fix these errors, a quality I quite enjoy about myself.

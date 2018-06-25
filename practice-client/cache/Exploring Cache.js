@@ -35,6 +35,6 @@ caches.open('test-cache').then(function (cache) {
 	status: 200,
 	statusText: "OK",
 	type: "basic",
-	url: "https://davidwalsh.name/page/1"
+	url: "..."
   }
   */

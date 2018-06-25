@@ -1,3 +1,5 @@
+require('isomorphic-fetch');
+
 const FETCH_TIMEOUT = 5000;
 let didTimeOut = false;
 
@@ -7,7 +9,7 @@ new Promise(function (resolve, reject) {
 		reject(new Error('Request timed out'));
 	}, FETCH_TIMEOUT);
 
-	fetch('https://davidwalsh.name/?xx1')
+	fetch('https://github.com/loggar')
 		.then(function (response) {
 			// Clear the timeout as cleanup
 			clearTimeout(timeout);

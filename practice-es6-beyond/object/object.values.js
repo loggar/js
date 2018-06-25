@@ -9,7 +9,7 @@ Object.values({ 'a': 23, 'b': 19 }) // [23, 19]
 Object.values({ 80: 'eighty', 0: 1, 1: 'yes' }) // [1, 'yes', 'eighty']
 
 // String
-Object.values('davidwalsh') // ["d", "a", "v", "i", "d", "w", "a", "l", "s", "h"]
+Object.values('abcde') // ['a', 'b', 'c', 'd', 'e']
 
 // Array
 Object.values([1, 2, 3]) // [1, 2, 3]

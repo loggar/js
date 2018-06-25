@@ -1,4 +1,5 @@
 // https://davidwalsh.name/essential-javascript-functions
+
 /*
 The debounce function can be a game-changer when it comes to event-fueled performance.
 If you aren't using a debouncing function with a scroll, resize, key* event, you're probably doing it wrong.

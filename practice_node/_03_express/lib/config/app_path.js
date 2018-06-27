@@ -5,4 +5,3 @@ module.exports = {
 	DIR_ROOT : path.resolve(dir, "../../"),
 	DIR_PUBLIC : path.resolve(dir, "../../public")
 };
-//console.log(module.exports);

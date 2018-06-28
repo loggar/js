@@ -3,15 +3,15 @@
 'use strict';
 
 var express = require('express'),
-  logger = require('../request-logger.js'),
-  noCache = require('connect-cache-control'),
-  errorHandler = require('express-error-handler'),
-  log = logger(),
-  app = express(),
-  env = process.env,
-  port = env.myapp_port || 3000,
-  http = require('http'),
-  server;
+	logger = require('bunyan-request-logger'),
+	noCache = require('connect-cache-control'),
+	errorHandler = require('express-error-handler'),
+	log = logger(),
+	app = express(),
+	env = process.env,
+	port = env.myapp_port || 3000,
+	http = require('http'),
+	server;
 
 app.use(log.requestLogger());
 
@@ -25,10 +25,10 @@ app.get('/log.gif', noCache, log.route());
 
 // Route that triggers a sample error:
 app.get('/error', function createError(req,
-  res, next) {
-  var err = new Error('Sample error');
-  err.status = 500;
-  next(err);
+	res, next) {
+	var err = new Error('Sample error');
+	err.status = 500;
+	next(err);
 });
 
 // Log request errors:
@@ -43,11 +43,11 @@ server = http.createServer(app);
 // so the error handler can shut it down
 // gracefully:
 app.use(errorHandler({
-  server : server
+	server: server
 }));
 
-server.listen(port, function() {
-  log.info('Listening on port ' + port);
+server.listen(port, function () {
+	log.info('Listening on port ' + port);
 });
 
 /*

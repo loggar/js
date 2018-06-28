@@ -1,5 +1,7 @@
+// $ npm install --save bunyan-request-logger
+
 var express = express = require('express'),
-	logger = require('../request-logger.js'),
+	logger = require('bunyan-request-logger'),
 	noCache = require('connect-cache-control'),
 	log = logger(),
 	app = express(),

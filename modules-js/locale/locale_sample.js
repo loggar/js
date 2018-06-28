@@ -1,7 +1,7 @@
 var locale = require('locale'),
-  // ... other requires ...
-  // Tell locale which locales you support.
-  supportedLocales = [ 'en', 'en_US', 'ja' ];
+	// ... other requires ...
+	// Tell locale which locales you support.
+	supportedLocales = ['en', 'en_US', 'ja'];
 
 // locale() returns a middleware function that pulls the
 // req.headers["accept-language"] attribute and runs the value
@@ -10,10 +10,10 @@ var locale = require('locale'),
 app.use(locale(supportedLocales));
 
 Globalize.loadTranslation('pt_BR', {
-  greetings : {
-    hello : "OlÃ¡",
-    bye : "Tchau"
-  }
+	greetings: {
+		hello: "OlÃ¡",
+		bye: "Tchau"
+	}
 });
 
 //Set the locale

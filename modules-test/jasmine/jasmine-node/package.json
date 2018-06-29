@@ -1,5 +1,5 @@
 {
-	"name": "jasmine-tutorial",
+	"name": "jasmine-node-tutorial",
 	"version": "0.1.0",
 	"main": "app.js",
 	"scripts": {

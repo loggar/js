@@ -1,5 +1,5 @@
 var b = document.getElementById("mybutton");
-var handler = function () { alert("Thanks!"); };
+var handler = function () { console.log("Thanks!"); };
 if (b.addEventListener)
 	b.addEventListener("click", handler, false);
 else if (b.attachEvent)

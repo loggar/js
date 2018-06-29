@@ -3,20 +3,20 @@ function saveCustomer(customer) {
 	if (isCustomerValid(customer)) {
 		database.save(customer)
 	} else {
-		alert('customer is invalid')
+		console.log('customer is invalid')
 	}
 }
 // ternary equivalent
 function saveCustomer(customer) {
 	return isCustomerValid(customer)
 		? database.save(customer)
-		: alert('customer is invalid')
+		: console.log('customer is invalid')
 }
 // ES6 style
 const saveCustomer = customer =>
 	isCustomerValid(customer)
 		? database.save(customer)
-		: alert('customer is invalid')
+		: console.log('customer is invalid')
 
 /*
 if - elseif - else

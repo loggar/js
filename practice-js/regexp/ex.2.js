@@ -5,7 +5,7 @@ var pattern = /Java/g;
 var text = "JavaScript is more fun than Java!";
 var result;
 while ((result = pattern.exec(text)) != null) {
-	alert("Matched '" + result[0] + "'" + " at position " + result.index + "; next search begins at " + pattern.lastIndex);
+	console.log("Matched '" + result[0] + "'" + " at position " + result.index + "; next search begins at " + pattern.lastIndex);
 }
 
 var pattern = /java/i;

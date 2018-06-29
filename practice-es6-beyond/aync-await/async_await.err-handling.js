@@ -23,7 +23,7 @@ async function f3() {
 	try {
 		let response = await fetch('http://no-such-url');
 	} catch (err) {
-		alert(err); // TypeError: failed to fetch
+		console.error(err); // TypeError: failed to fetch
 	}
 }
 
@@ -40,7 +40,7 @@ async function f4() {
 		let user = await response.json();
 	} catch (err) {
 		// catches errors both in fetch and response.json
-		alert(err);
+		console.error(err);
 	}
 }
 
@@ -55,7 +55,7 @@ async function f() {
 }
 
 // f() becomes a rejected promise
-f().catch(alert); // TypeError: failed to fetch
+f().catch(console.log); // TypeError: failed to fetch
 
 /*
 If we forget to add .catch there, then we get an unhandled promise error (and can see it in the console)

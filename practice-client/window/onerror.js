@@ -1,7 +1,7 @@
 // Display error messages in a dialog box, but never more than 3
 window.onerror = function (msg, url, line) {
 	if (onerror.num++ < onerror.max) {
-		alert("ERROR: " + msg + "\n" + url + ":" + line);
+		console.error("ERROR: " + msg + "\n" + url + ":" + line);
 		return true;
 	}
 }

@@ -1,6 +1,6 @@
 var b = document.getElementById("mybutton");
-b.onclick = function () { alert("Thanks for clicking me!"); };
-b.addEventListener("click", function () { alert("Thanks again!"); }, false);
+b.onclick = function () { console.log("Thanks for clicking me!"); };
+b.addEventListener("click", function () { console.log("Thanks again!"); }, false);
 
 
 

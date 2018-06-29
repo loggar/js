@@ -46,7 +46,7 @@ npm install webpack uglifyjs-webpack-plugin babel-core babel-loader babel-preset
 import $ from 'jquery';
 $(document).ready(function () {
 	$(".myButton").click(function () {
-		alert("Hello!");
+		console.log("Hello!");
 	});
 });
 ```
@@ -166,7 +166,7 @@ import mathAPI from './math/operations.js';
 $(document).ready(function () {
 	$(".myButton").click(function () {
 		var message = "5 + 3 = " + mathAPI.add(5, 3) + " 5 * 3 = " + mathAPI.multiply(5, 3)
-		alert(message);
+		console.log(message);
 	});
 });
 ```

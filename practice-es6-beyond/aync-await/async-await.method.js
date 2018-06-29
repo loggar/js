@@ -10,4 +10,4 @@ class Waiter {
 
 new Waiter()
 	.wait()
-	.then(alert); // 1
+	.then(console.log); // 1

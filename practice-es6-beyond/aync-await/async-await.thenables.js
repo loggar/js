@@ -12,7 +12,7 @@ class Thenable {
 		this.num = num;
 	}
 	then(resolve, reject) {
-		alert(resolve); // function() { native code }
+		console.log(resolve); // function() { native code }
 		// resolve with this.num*2 after 1000ms
 		setTimeout(() => resolve(this.num * 2), 1000); // (*)
 	}
@@ -21,7 +21,7 @@ class Thenable {
 async function f() {
 	// waits for 1 second, then result becomes 2
 	let result = await new Thenable(1);
-	alert(result);
+	console.log(result);
 }
 
 f();

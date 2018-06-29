@@ -43,7 +43,7 @@ function qna_003() {
 }
 
 /*
- * What is the outcome of the two alerts below?
+ * What is the outcome of the two console.log functions below?
  * 
  */
 function qna_005() {
@@ -54,7 +54,7 @@ function qna_005() {
 		console.log(foo + bar);
 	})();
 
-	// alert(foo + bar); /* Uncaught ReferenceError: bar is not defined */
+	// console.log(foo + bar); /* Uncaught ReferenceError: bar is not defined */
 }
 
 /*

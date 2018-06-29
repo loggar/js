@@ -5,7 +5,7 @@ function foo() {
 		let a = 4;
 	}
 
-	console.log(a); // alerts '10' because the 'let' keyword
+	console.log(a); // '10' because the 'let' keyword
 }
 
 foo();

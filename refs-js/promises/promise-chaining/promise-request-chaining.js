@@ -20,7 +20,6 @@ function initialize() {
 			}
 		})
 	})
-
 }
 
 function main() {

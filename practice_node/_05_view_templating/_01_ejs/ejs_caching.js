@@ -1,5 +1,3 @@
-var logger = require('../lib/modules/logger.winston')(__filename);
-
 var ejs = require('ejs');
 var template = "<%= message %>";
 var context = {
@@ -11,4 +9,4 @@ context.cache = cache;
 context.filename = "uniqueIdentifiyWhicheverTemplateCached";
 
 var output = ejs.render(template, context);
-logger.debug(output);
+console.log(output);

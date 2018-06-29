@@ -1,5 +1,3 @@
-var logger = require('../lib/modules/logger.winston')(__filename);
-
 var fs = require('fs');
 var http = require('http');
 var path = require('path');
@@ -34,7 +32,7 @@ function getEntries() {
 
 // getEntries.test
 var entries = getEntries();
-logger.debug(entries);
+console.log(entries);
 
 var ejs = require('ejs');
 var template = fs.readFileSync(path.resolve(dir, './blog_page.ejs'), 'utf8');
@@ -46,7 +44,7 @@ function blogPage(arr) {
 }
 
 // blogPage.test
-logger.debug(blogPage(getEntries()));
+console.log(blogPage(getEntries()));
 
 // test http server.
 var server = http.createServer(function(req, res) {

@@ -13,5 +13,3 @@ function* bar() {
 for (var v of bar()) {
 	console.log(v);
 }
-// 1 2 3
-// x: 4

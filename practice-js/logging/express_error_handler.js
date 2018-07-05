@@ -1,4 +1,4 @@
-// $ npm install --save express-error-handler
+// $ npm install --save express-error-handler connect-cache-control express-error-handler
 
 'use strict';
 
@@ -16,11 +16,7 @@ var express = require('express'),
 app.use(log.requestLogger());
 
 // Route to handle client-side log messages.
-//
-// This route prepends the cache-control
-// middleware so that the browser always logs
-// to the server instead of fetching a useless
-// OK message from its cache.
+// This route prepends the cache-control middleware so that the browser always logs to the server instead of fetching a useless OK message from its cache.
 app.get('/log.gif', noCache, log.route());
 
 // Route that triggers a sample error:
@@ -34,14 +30,10 @@ app.get('/error', function createError(req,
 // Log request errors:
 app.use(log.errorLogger());
 
-// Create the server object that we can pass
-// in to the error handler:
+// Create the server object that we can pass in to the error handler:
 server = http.createServer(app);
 
-// Respond to errors and conditionally shut
-// down the server. Pass in the server object
-// so the error handler can shut it down
-// gracefully:
+// Respond to errors and conditionally shut down the server. Pass in the server object so the error handler can shut it down gracefully:
 app.use(errorHandler({
 	server: server
 }));

@@ -1,9 +1,5 @@
 // Tracking pixel / web bug
-// 
-// Using a 1x1 transparent gif allows you to
-// use the logger in emails or embed the 
-// tracking pixel on third party sites without
-// requiring JavaScript.
+// Using a 1x1 transparent gif allows you to use the logger in emails or embed the  tracking pixel on third party sites without requiring JavaScript.
 log.route = function route() {
 	return function pixel(req, res) {
 		var data;
@@ -17,9 +13,7 @@ log.route = function route() {
 
 		res.header('content-type', 'image/gif');
 
-		// GIF images can be so small, it's
-		// easy to just inline it instead of
-		// loading from a file:
+		// GIF images can be so small, it's easy to just inline it instead of loading from a file:
 		res.send(
 			'GIF89a\u0001\u0000\u0001\u0000' +
 			'\u00A1\u0001\u0000\u0000\u0000\u0000' +

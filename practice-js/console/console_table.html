@@ -34,6 +34,17 @@
 		}
 
 		console.table(a)
+
+		console.table([
+			{ x: 1, y: 2, z: 3 },
+			{ x: 'First column', y: 'Second column', z: null }
+		])
+
+		const shoppingCart = {}
+		shoppingCart.firstItem = { color: 'black', size: 'L' }
+		shoppingCart.secondItem = { color: 'red', size: 'L' }
+		shoppingCart.thirdItem = { color: 'white', size: 'M' }
+		console.table(shoppingCart, ['color', 'size'])
 	</script>
 </body>
 

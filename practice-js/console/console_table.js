@@ -28,3 +28,7 @@ const a = {
 
 console.table(a)
 
+console.table([
+	{ x: 1, y: 2, z: 3 },
+	{ x: 'First column', y: 'Second column', z: null }
+])

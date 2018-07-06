@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script type="text/javascript">
+		console.log("my %s has %d years", 'dog', 15);
+		console.log("my %s has %i years", 'dog', 15);
+
+		console.log("floating point number example : %f", Math.PI);
+
+		const obj = {
+			facebook: false,
+			linkedin: true,
+			flickr: false,
+			instagram: false,
+			stackoverflow: true,
+			github: true,
+			mozillar: true,
+			hackernoon: true,
+			freecodecamp: true
+		}
+
+		console.log("site interesting : %O", obj);
+		console.log("site interesting : %j", obj);
+
+		if (typeof window !== 'undefined') {
+			console.log("%o, %O", document.body, document.body);
+
+			console.log(
+				'%c My %s has %d years',
+				'color: yellow; background:black; font-size: 16pt',
+				'cat',
+				2
+			);
+
+			console.log([1, 2]);
+
+			console.dir([1, 2]);
+			// equals
+			console.log('%O', [1, 2]);
+		}
+	</script>
+</body>
+
+</html>

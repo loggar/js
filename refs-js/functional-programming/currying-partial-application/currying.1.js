@@ -11,6 +11,6 @@ function sum(a, b) {
 	return a + b;
 }
 
-let carriedSum = curry(sum);
+let curriedSum = curry(sum);
 
 console.log(curriedSum(1)(2)); // 3

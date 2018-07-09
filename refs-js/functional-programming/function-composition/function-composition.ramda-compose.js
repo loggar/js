@@ -1,3 +1,6 @@
+/*
+import Ramda from 'ramda'
+*/
 const compose = Ramda.compose
 
 const compute = compose(

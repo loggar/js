@@ -22,12 +22,9 @@ fetch(url_get, { method: 'GET' })
 	.then(body => console.log(body));
 */
 
-var fetchGet = function fetchGet(url) {
-	var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+var crFetch = (0, _curry2.default)(_nodeFetch2.default);
 
-	var o = Object.assign({ method: 'GET' }, option);
-	return (0, _nodeFetch2.default)(url, o);
-};
+var fetchGet = crFetch(_2.default, { method: 'GET' });
 
 fetchGet(url_get).then(function (res) {
 	return res.text();

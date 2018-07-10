@@ -1,6 +1,4 @@
-import Ramda from 'ramda'
-
-const compose = Ramda.compose
+const compose = (...functions) => data => functions.reduceRight((value, func) => func(value), data)
 
 const map = f => x => Array.prototype.map.call(x, f) // now method map is detached from Array object by currying.
 

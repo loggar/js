@@ -12,5 +12,5 @@ const compute = compose(
 	sum
 )
 
-const result = compute(3, 5) // 74
-console.log(result)
+const r = compute(3, 5)
+console.log(r) // 74

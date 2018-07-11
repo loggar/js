@@ -23,4 +23,8 @@ $ casperjs.cmd --version
 ## run
 ```
 $ node ./src/app.js
+
+$ node ./src/app2.js
+
+$ node ./src/screenshots.js
 ```

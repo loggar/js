@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
 	const page = await browser.newPage();
 	await page.goto('https://google.com', { waitUntil: 'networkidle' });
 	// Type our query into the search bar
-	await page.type('logrocket');
+	await page.type('weather');
 
 	await page.click('input[type="submit"]');
 

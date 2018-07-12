@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="ex3.multiple-steps-chain"
+    errors="0" failures="1" hostname="" id="" package="ex3.multiple-steps-chain" skipped="0"
+    tests="1" time="5.480" timestamp="Thu, 12 Jul 2018 06:13:53 GMT">
+  
+    <testcase name="demoTestGoogle" classname="ex3.multiple-steps-chain" time="5.480" assertions="2">
+
+      <failure message="Timed out while waiting for element &lt;button[name=btnG]&gt; to be visible for 1000 milliseconds.">    at Object.demoTestGoogle (C:\Users\webnl\Documents\_workspace_js\loggar_js\modules-test\end-test.nightwatch\src-test-nightwatch\ex3.multiple-steps-chain.js:6:4)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

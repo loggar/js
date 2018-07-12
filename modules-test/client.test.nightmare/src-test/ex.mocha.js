@@ -10,7 +10,7 @@ describe('Load a Page', function () {
 
 	describe('/ (Home Page)', () => {
 		it('should load without error', done => {
-			nightmare.goto('https://logrocket.com')
+			nightmare.goto('https://github.com/loggar')
 				.end()
 				.then(function (result) {
 					done()

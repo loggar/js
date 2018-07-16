@@ -14,6 +14,6 @@ var date3 = new Date(y + '-' + m + ' ' + d);
 console.log(date2);
 console.log(date3);
 
-var date4 = Date.parse(date);
+var strDate = y + '-' + m + '-' + d + ' 00:00:00.000'
+console.log(strDate);
 
-console.log(date4);

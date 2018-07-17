@@ -5,7 +5,7 @@
  * @version 0.1.1
  */
 
-var env_mode = process.env.NODE_ENV || 'developement';
+var env_mode = process.env.NODE_ENV || 'development';
 var path = require("path");
 var log_file = require('../lib-resources/dirs').resolveLog(env_mode, path.basename(__filename));
 var logger = require('./logger.winston').init(env_mode, __filename, log_file);

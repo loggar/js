@@ -1,4 +1,4 @@
-var env_mode = process.env.NODE_ENV || 'developement';
+var env_mode = process.env.NODE_ENV || 'development';
 var path = require('path');
 var log_dir = path.resolve(__dirname, '../../../../');
 var logger = require('../../../../modules-lib/winston/logger.winston')(__filename || 'Process Name', 'debug', 1, log_dir + '/_log/pm2-sample-app.log');

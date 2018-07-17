@@ -3,7 +3,7 @@ var app = express()
 var chokidar = require('chokidar')
 var port = process.env.PORT || 9000
 
-var env_mode = process.env.NODE_ENV || 'developement';
+var env_mode = process.env.NODE_ENV || 'development';
 if (env_mode !== 'production') {
 	var watcher = chokidar.watch('./app')
 	watcher.on('ready', function () {

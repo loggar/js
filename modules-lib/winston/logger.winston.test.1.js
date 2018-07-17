@@ -1,4 +1,4 @@
-var env_mode = process.env.ENV || "developement";
+var env_mode = process.env.ENV || "development";
 var log_file = './_log/test-winston.log';
 var logger = require('./logger.winston').init(env_mode, __filename, log_file);
 

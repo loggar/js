@@ -1,4 +1,4 @@
-var env_mode = process.env.NODE_ENV || 'developement';
+var env_mode = process.env.NODE_ENV || 'development';
 var server_id = process.env.SERVER_ID || 'imitation';
 
 var datasources = (function () {

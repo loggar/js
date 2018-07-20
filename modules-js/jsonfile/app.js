@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require("fs");
 var jsonfile = require('jsonfile');
 
-var filepath = path.join(__dirname, './sample/sample.json');
+var filepath = path.join(__dirname, './sample-json/sample.json');
 
 var read = function () {
 	var contents = fs.readFileSync(filepath);

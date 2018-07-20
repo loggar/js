@@ -1,3 +1,5 @@
+var async = require('async');
+
 // ...or ES2017 async functions
 async.mapLimit(urls, 5, async function (url) {
 	const response = await fetch(url)

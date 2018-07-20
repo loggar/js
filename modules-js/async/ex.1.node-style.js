@@ -1,3 +1,5 @@
+var async = require('async');
+
 // for use with Node-style callbacks...
 var obj = { dev: "/dev.json", test: "/test.json", prod: "/prod.json" };
 var configs = {};

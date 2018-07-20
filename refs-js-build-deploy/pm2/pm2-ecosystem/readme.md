@@ -65,27 +65,78 @@ $ npm install
 
 ## Ecosystem of Application Jobs with Environment value
 
-> ecosystem.config.js
+```
+// ecosystem.config.js
+
+module.exports = {
+	apps: [
+		{
+			name: "track-attend-record",
+			script: "./job-schedulers/src/track-attend-record/track-attend-record.scheduler.js",
+			watch: false,
+			env: {
+				"PORT": 29110,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 29110,
+				"NODE_ENV": "production"
+			}
+		},
+		{
+			name: "validate-del-flag",
+			script: "./job-schedulers/src/validate-del-flag/validate-del-flag.scheduler.js",
+			watch: false,
+			env: {
+				"PORT": 29120,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 29120,
+				"NODE_ENV": "production"
+			}
+		},
+		{
+			name: "class-enroll-status",
+			script: "./class-enroll-status/.dist/main.server-bundle.js",
+			watch: false,
+			env: {
+				"PORT": 28110,
+				"NODE_ENV": "development"
+			},
+			env_production: {
+				"PORT": 28110,
+				"NODE_ENV": "production"
+			}
+		}
+	]
+}
+```
 
 Start Application Jobs with env option.
 
 ```
-$ pm2 start ecosystem.config.js --env development
+// windows 
+
+$ set SERVER_ID=local
+$ pm2 start ecosystem.config.js
 ```
 
-in imitation server
+in imitaion(test) server : 
 
 ```
-$ pm2 start ecosystem.config.js --env imitation
+$ SERVER_ID=imitation pm2 start ecosystem.config.js --env production
 ```
 
 in production : 
 
 ```
-$ pm2 start ecosystem.config.js --env production
+$ SERVER_ID=real pm2 start ecosystem.config.js --env production
 ```
 
 ## Generating a startup script
+
+http://pm2.keymetrics.io/docs/usage/startup/
 
 To get the automatically-configured startup script for your machine you need to type this command:
 
@@ -123,10 +174,12 @@ $ pm2 startup
 $ systemctl list-units
 
 # Check logs
-$ journalctl -u pm2-<USER>
+# journalctl -u pm2-<USER>
+$ journalctl -u pm2-root
 
 # Cat systemd configuration file
-$ systemctl cat pm2-<USER>
+# systemctl cat pm2-<USER>
+$ systemctl cat pm2-root
 
 # Analyze startup
 $ systemd-analyze plot > output.svg
@@ -151,6 +204,10 @@ Disabling startup system
 
 ```
 $ pm2 unstartup
+
+or 
+
+$ pm2 unstartup systemd
 ```
 
 Stop/Delete applications
@@ -169,4 +226,6 @@ http://pm2.keymetrics.io/docs/usage/log-management/
 
 ```
 $ pm2 logs
+
+$ pm2 flush # Clear all the logs
 ```

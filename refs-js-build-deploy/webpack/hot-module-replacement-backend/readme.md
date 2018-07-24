@@ -18,8 +18,7 @@ npm install express --save
 			{
 				"modules": false
 			}
-		],
-		"react"
+		]
 	]
 }
 ```
@@ -74,7 +73,7 @@ backend module
 ```
 //src-server/lib-sample.js
 
-var sample = {
+const sample = {
 	fn1: function () {
 		return 12;
 	}
@@ -109,6 +108,7 @@ backend server
 import http from 'http'
 import app from '../src-server/app'
 const server = http.createServer(app)
+
 let currentApp = app
 server.listen(3000)
 if (module.hot) {

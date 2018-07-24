@@ -26,7 +26,7 @@ module.exports = {
 				"BUILD_TARGET": JSON.stringify('server')
 			}
 		}),
-		new CleanWebpackPlugin(['.build']),
+		new CleanWebpackPlugin(['.build'])
 	],
 	output: {
 		path: path.join(__dirname, '.build'),

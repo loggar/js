@@ -200,7 +200,7 @@ WantedBy=multi-user.target network-online.target
 
 ## Disabling Ecosystem of Application Jobs
 
-Disabling startup system
+Disabling startup syste
 
 ```
 $ pm2 unstartup

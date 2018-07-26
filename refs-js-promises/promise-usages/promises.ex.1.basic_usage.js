@@ -1,8 +1,9 @@
 var p = new Promise(function (resolve, reject) {
-
 	// Do an async task async task and then...
 
-	if (/* good condition */ true) {
+	var good = false;
+
+	if (/* good condition */ good) {
 		resolve('Success!');
 	}
 	else {
@@ -10,8 +11,10 @@ var p = new Promise(function (resolve, reject) {
 	}
 });
 
-p.then(function () {
+p.then(function (r) {
 	/* do something with the result */
-}).catch(function () {
+	console.log(r);
+}).catch(function (r) {
 	/* error :( */
+	console.log(r);
 });

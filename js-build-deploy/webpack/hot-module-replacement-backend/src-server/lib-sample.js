@@ -1,6 +1,6 @@
 const sample = {
 	fn1: function () {
-		return 12;
+		return "module_data_013";
 	}
 }
 

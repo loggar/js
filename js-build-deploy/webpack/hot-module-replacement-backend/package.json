@@ -4,7 +4,8 @@
 	"scripts": {
 		"start": "node bin/www.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start:server:dev": "webpack --mode development --config webpack.config.server.js"
+		"start:server:dev": "webpack --mode development --config webpack.config.server.js",
+		"build:server:prod": "webpack --mode production --config webpack.config.prod.js"
 	},
 	"dependencies": {
 		"express": "^4.16.3"

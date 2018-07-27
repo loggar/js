@@ -2,28 +2,15 @@
 
 install
 
-```
+``` shell
 npm install --save-dev webpack babel-loader babel-core babel-preset-env webpack-command webpack-node-externals start-server-webpack-plugin clean-webpack-plugin
+```
 
+``` shell
 npm install --save express
 ```
 
-configure babel
-
-``` json
-{
-	"presets": [
-		[
-			"env",
-			{
-				"modules": false
-			}
-		]
-	]
-}
-```
-
-backend module
+backend sample module
 
 ``` javascript
 //src-server/lib-sample.js

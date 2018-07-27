@@ -126,6 +126,10 @@ run webpack
 npm run start:server:dev
 ```
 
+in the `.build` directory while running webpack..
+
+![build directory - dummy files](./build-dist.while-hot-loading.png)
+
 build production bundle
 
 ```

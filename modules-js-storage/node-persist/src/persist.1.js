@@ -5,7 +5,7 @@ var path = require('path');
 logger.debug(path);
 var dir = path.dirname(__filename);
 logger.debug(dir);
-var targetDir = path.normalize(dir + "/storage/.node-persist");
+var targetDir = path.resolve(dir, "../storage/.node-persist");
 logger.debug(targetDir);
 
 storage.init({

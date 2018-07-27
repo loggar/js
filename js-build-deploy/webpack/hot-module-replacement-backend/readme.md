@@ -1,6 +1,6 @@
 # webpack-hot-reloading-backend
 
-install
+Install
 
 ``` shell
 npm install --save-dev webpack babel-loader babel-core babel-preset-env webpack-command webpack-node-externals start-server-webpack-plugin clean-webpack-plugin
@@ -10,7 +10,7 @@ npm install --save-dev webpack babel-loader babel-core babel-preset-env webpack-
 npm install --save express
 ```
 
-backend sample module
+Backend sample module
 
 ``` javascript
 //src-server/lib-sample.js
@@ -21,7 +21,7 @@ const sample = {
 }
 ```
 
-backend app
+Backend app
 
 ``` javascript
 // src-server/app.js
@@ -38,7 +38,7 @@ app.get('/api', (req, res) => {
 export default app
 ```
 
-backend entry
+Backend entry
 
 ``` javascript
 // bin/www.js
@@ -57,7 +57,7 @@ if (module.hot) {
 }
 ```
 
-configure webpack
+Configure Webpack
 
 ``` javascript
 // webpack.config.server.js
@@ -107,7 +107,7 @@ npm script
 }
 ```
 
-run webpack
+Run webpack
 
 ```
 npm run start:server:dev
@@ -117,7 +117,7 @@ in the `.build` directory while running webpack..
 
 ![build directory - dummy files](./build-dist.while-hot-loading.png)
 
-build production bundle
+Build production bundle
 
 ```
 npm run build:server:prod

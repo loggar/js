@@ -15,8 +15,6 @@ if (env_mode !== 'production') {
 		})
 	})
 } else {
-	// exclude in production
-	/*
 	var watcher = chokidar.watch('./dist')
 	watcher.on('ready', function () {
 		watcher.on('all', function () {
@@ -26,7 +24,6 @@ if (env_mode !== 'production') {
 			})
 		})
 	})
-	*/
 }
 
 app.use(function (req, res, next) {

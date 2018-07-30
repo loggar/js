@@ -1,8 +1,0 @@
-{
-  "name": "app-name",
-  "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "jqGrid": "jsgrid#^4.7.1"
-  }
-}

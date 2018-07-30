@@ -1,8 +1,0 @@
-{
-	"name": "loggar_nodejs_mysql",
-	"version": "0.1.0",
-	"dependencies": {
-		"mysql": "^2.15.0"
-	},
-	"devDependencies": {}
-}

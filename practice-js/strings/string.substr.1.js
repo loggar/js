@@ -1,4 +1,28 @@
-var {is, not} = require("../../modules-lib/tests/simple-test.js");
+// simple test module
+var { is, not } = (function () {
+	var log = function (id, result) {
+		var t_log = "";
+		if (!id) t_log += "unknow id";
+		else t_log += id;
+		t_log += " : ";
+		if (result) t_log += "ok.";
+		else t_log += "failed to be ok.";
+		console.log(t_log);
+	}
+
+	return {
+		is: function (id, b) {
+			var result = !!b;
+			log(id, result);
+			return result;
+		},
+		not: function (id, b) {
+			var result = !b;
+			log(id, result);
+			return result;
+		}
+	};
+})();
 
 /* year and semester 3 */
 var trimester_c = "0217";
@@ -8,15 +32,15 @@ var trimester_3 = "0217";
 var trimester_4 = "0317";
 var trimester_5 = "0118";
 
-var trimester_order = function(t) {
-  if(typeof t !== "string" || t.length !== 4) throw Error("invalid arg t:" + t);
-  return t.substr(t.length-2, 2) + t.substr(0,2);
+var trimester_order = function (t) {
+	if (typeof t !== "string" || t.length !== 4) throw Error("invalid arg t:" + t);
+	return t.substr(t.length - 2, 2) + t.substr(0, 2);
 }
 
-var trimester_compare = function(t1, t2) {
-  if(trimester_order(t1) < trimester_order(t2)) return -1;
-  else if(trimester_order(t1) === trimester_order(t2)) return 0;
-  else return 1;
+var trimester_compare = function (t1, t2) {
+	if (trimester_order(t1) < trimester_order(t2)) return -1;
+	else if (trimester_order(t1) === trimester_order(t2)) return 0;
+	else return 1;
 }
 
 is(1, trimester_order(trimester_c) === "1702");

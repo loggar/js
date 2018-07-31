@@ -11,4 +11,6 @@ console.log(root);
 var root2 = path.resolve(dir, "../../abc.txt");
 console.log(root2);
 
-console.log(dir.split(path.sep));
+var dirs = dir.split(path.sep);
+console.log(dirs);
+console.log(dirs[dirs.length - 1]);

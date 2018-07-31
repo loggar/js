@@ -1,4 +1,0 @@
-$breakpoints: (small: 320px, medium: 768px, large: 1024px);
-@include media("height>small", "height<=medium") {
-    height: 50%;
-}

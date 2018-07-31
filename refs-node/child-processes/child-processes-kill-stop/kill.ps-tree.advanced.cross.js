@@ -45,4 +45,5 @@ if (!isWin) {
 			console.log('exec error: ' + error);
 		}
 	});
+	// The /T (terminates all the sub processes) and /F (forcefully terminating) arguments are also critical and without them we can't achieve the desired results.
 }

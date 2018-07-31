@@ -1,5 +1,4 @@
 var connect = require('connect');
-var http = require('http');
 var app = connect();
 
 var portNumber = 13030;
@@ -10,5 +9,3 @@ app.use(function(req, res){
 }).listen(portNumber, 'localhost', function() {
 	console.log('Server running at port ' + portNumber);
 });
-
-

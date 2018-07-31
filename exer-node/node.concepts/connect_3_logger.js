@@ -1,5 +1,4 @@
 var connect = require('connect');
-var http = require('http');
 var app = connect().use(connect.logger('dev'));
 
 var portNumber = 13030;

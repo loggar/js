@@ -4,7 +4,6 @@ var logger = require('./logger.winston').init("production", __filename, log_file
 
 var appName = 'Test-Logger-Winston';
 
-
 logger.debug('application [%s] is starting in [%s] mode.');
 logger.info('application [%s] is starting in [%s] mode.', appName, env_mode);
 logger.warn('application [%s] is starting in [%s] mode.', appName, env_mode);

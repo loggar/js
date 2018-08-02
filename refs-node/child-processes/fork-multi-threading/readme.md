@@ -12,4 +12,4 @@ Node.js is non-blocking which means that all functions ( callbacks ) are delegat
 
 * Forking multiple processes is essential for freeing up memory and unloading single process.
 * When we need to delegate tasks ( run them in parallel ) to another process for the sake of the speed.
-* 
+

@@ -5,12 +5,6 @@
 ref)
 * https://www.npmjs.com/package/nightmare 
 
-init
-
-```
-npm init -y
-```
-
 install
 
 ```

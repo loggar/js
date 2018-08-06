@@ -42,6 +42,7 @@ _test-output/
 
 # code coverage
 coverage/
+.nyc_output/
 
 # temporary dirs
 tmp/

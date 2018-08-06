@@ -37,6 +37,32 @@ $ forever --help
 $ forever -m 5 examples/error-on-timer.js
 ```
 
+It is a good idea to log output from the Forever tool and the script by using the logging options -l, -o, and -e, as shown this example:
+
+```shell
+$ forever start -l forever.log -o out.log -e err.log script.js
+```
+
+To view the list of scripts that were started by Forever:
+
+```shell
+$ forever list
+```
+
+To stop a script that was started by Forever use the forever stop command and specify the process index (as listed by the forever list command), or path of the file.
+
+```shell
+$ forever stop 1
+
+$ forever stop script.js
+```
+
+To stop all the scripts that were started by Forever:
+
+```shell
+$ forever stopall
+```
+
 ## JSON Configuration Files
 
 ```json

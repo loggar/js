@@ -48,8 +48,5 @@ coverage/
 tmp/
 _tmp/
 
-# cache dirs
-.http-cache/
-
 # visual studio code
 .vscode/

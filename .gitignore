@@ -36,6 +36,8 @@ dist/
 dist-production/
 out-tsc/
 .build/
+dist8/
+dist10/
 
 # test
 _test-output/

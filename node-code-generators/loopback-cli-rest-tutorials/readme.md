@@ -1,4 +1,4 @@
-# Loopback - Build a RESTful API with Authentication
+# Loopback - Build a RESTful API
 
 Install LoopBack CLI via NPM
 

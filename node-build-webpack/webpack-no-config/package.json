@@ -1,0 +1,13 @@
+{
+	"name": "webpack-no-config",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack --mode development --module-bind js=babel-loader",
+		"build": "webpack --mode production --module-bind js=babel-loader"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

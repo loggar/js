@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script type="module">
+		import { module_1 } from '/lib/module_1.js';
+		module_1.f();
+	</script>
+	<script type="module">
+		const libPath = '/lib';
+		import { module_1 } from `${libPath}/module_1.js`;  // Uncaught SyntaxError: Unexpected template string
+	</script>
+	<script type="module">
+		const libPath = '/lib';
+		const module_1 = import(`${libPath}/module_1.js`);
+		console.log(module_1);  // Promise {<pending>}
+		module_1.then(function () {
+			console.log('module_1 loaded.');
+		});
+
+		import(`${libPath}/module_2.js`).then(function () {
+			console.log('module_2 loaded.');
+		});
+	</script>
+</body>
+
+</html>

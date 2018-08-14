@@ -5,11 +5,11 @@ Promise.race is an interesting function
 
 var req1 = new Promise(function(resolve, reject) { 
 	// A mock async action using setTimeout
-	setTimeout(function() { resolve('First!'); }, 8000);
+	setTimeout(function() { resolve('First!'); }, 2000);
 });
 var req2 = new Promise(function(resolve, reject) { 
 	// A mock async action using setTimeout
-	setTimeout(function() { resolve('Second!'); }, 3000);
+	setTimeout(function() { resolve('Second!'); }, 1000);
 });
 Promise.race([req1, req2]).then(function(one) {
 	console.log('Then: ', one);

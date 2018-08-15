@@ -37,8 +37,5 @@ var p = tasks.reduce((promiseChain, currentTask) => {
 	arrayOfResults.forEach(element => {
 		temp += element;
 	});
-	return temp;
+	console.log(temp);
 });
-
-console.log(p);
-setTimeout(() => console.log(p), 1);

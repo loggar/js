@@ -4,9 +4,10 @@ class LinkedList {
 		this._head = 0
 	}
 
-	add(value) {
+	add(key, value) {
 		const node = {
-			value,
+			key: key,
+			value: value,
 			next: null
 		}
 
@@ -17,7 +18,6 @@ class LinkedList {
 		}
 
 		let current = this._head
-
 		while (current.next !== null) {
 			current = current.next
 		}
@@ -26,22 +26,18 @@ class LinkedList {
 		this._length++
 	}
 
-	/*
-	Another approach is to add the element as a first item to the list, add it as a new head and have it point to the former head element. This functionality will always require the same number of steps no matter the size of the data structure.
-	*/
-	/*
-	addHead(value) {
+	addHead(key, value) {
 		let node = {
-			value,
+			key: key,
+			value: value,
 			next: this._head
 		}
 
 		this._head = node
 	}
-	*/
 
 	remove(key) {
-		if (this._head.value === key) {
+		if (this._head.key === key) {
 			this._head = this._head.next
 			this._length--
 			return
@@ -51,7 +47,7 @@ class LinkedList {
 		let previous = this._head
 
 		while (current !== null) {
-			if (current.value === key) {
+			if (current.key === key) {
 				previous.next = current.next
 				this._length--
 				break
@@ -61,4 +57,41 @@ class LinkedList {
 			current = current.next
 		}
 	}
+
+	toArray() {
+		let arr = [];
+		let current = this._head
+		while (current !== null) {
+			arr.push({
+				key: current.key,
+				value: current.value
+			})
+			current = current.next;
+		}
+		return arr;
+	}
 }
+
+
+var ql = new LinkedList();
+ql.add(ql._length, {
+	a: 1
+});
+
+ql.add(ql._length, {
+	a: 2
+});
+
+ql.add(ql._length, {
+	a: 3
+});
+
+
+ql.add(ql._length, {
+	a: 4
+});
+
+console.log(ql.toArray());
+
+ql.remove(2);
+console.log(ql.toArray());

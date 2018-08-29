@@ -4,6 +4,11 @@ class LinkedList {
 		this._head = 0
 	}
 
+	clear() {
+		this._length = 0
+		this._head = 0
+	}
+
 	add(key, value) {
 		const node = {
 			key: key,

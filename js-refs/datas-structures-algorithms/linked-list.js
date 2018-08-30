@@ -1,3 +1,8 @@
+/**
+ * @Module Linked List
+ * @Desc node (key, value}
+ * 
+ */
 class LinkedList {
 	constructor() {
 		this._length = 0
@@ -63,8 +68,49 @@ class LinkedList {
 		}
 	}
 
+	get(key) {
+		if (this._head.key === key) {
+			return this._head
+		}
+
+		let r
+		let current = this._head.next
+		let previous = this._head
+
+		while (current !== null) {
+			if (current.key === key) {
+				r = current
+				break
+			}
+			previous = current
+			current = current.next
+		}
+		return r
+	}
+
+	set(key, value) {
+		if (this._head.key === key) {
+			this._head.value = value
+			return
+		}
+
+		let current = this._head.next
+		let previous = this._head
+
+		while (current !== null) {
+			if (current.key === key) {
+				current.value = value
+				break
+			}
+			previous = current
+			current = current.next
+		}
+		return
+	}
+
 	toArray() {
 		let arr = [];
+		if (!this._head) return arr
 		let current = this._head
 		while (current !== null) {
 			arr.push({
@@ -76,7 +122,6 @@ class LinkedList {
 		return arr;
 	}
 }
-
 
 var ql = new LinkedList();
 ql.add(ql._length, {

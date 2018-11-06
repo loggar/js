@@ -31,9 +31,7 @@ req.end();
 
 
 
-/*
-	ex2 PUT
-*/
+// ex2 PUT
 
 var bucket = {};
 bucket.name = "shiyas-bucket";

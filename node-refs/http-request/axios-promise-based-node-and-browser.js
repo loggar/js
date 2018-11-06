@@ -15,6 +15,9 @@ axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
 /*
 I use axios often specially in my front-end projects for React.js and Vue.js . It easily integrates with google firebase.
 
-Axios is a Promise based HTTP client for the browser as well as node.js. Using Promises is a great advantage when dealing with code that requires a more complicated chain of events. Writing asynchronous code can get confusing, and Promises are one of several solutions to this problem. They are even useful in other languages such as Swift.
+Axios is a Promise based HTTP client for the browser as well as node.js.
+Using Promises is a great advantage when dealing with code that requires a more complicated chain of events.
+Writing asynchronous code can get confusing, and Promises are one of several solutions to this problem.
+They are even useful in other languages such as Swift.
 */
 

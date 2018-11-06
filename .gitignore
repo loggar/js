@@ -52,3 +52,6 @@ _tmp/
 
 # visual studio code
 .vscode/
+
+# ssl
+ssl/

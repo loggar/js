@@ -27,7 +27,7 @@ class Monad {
 	chain(f) {//Helper func that maps and then gets the value out
 		return this.map(f).join();
 	};
-	ap(someOtherMonad) {//Used to deal w/ multiple Monads
+	ap(someOtherMonad) {//Used to deal with multiple Monads
 		return someOtherMonad.map(this.__value);
 	}
 }

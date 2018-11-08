@@ -1,6 +1,6 @@
 /*
 1. If there any object that might be null or have null properties, create a Monad object out of it.
-2. Use some libraries like ramdajs, that are “Maybe-aware” to access value from w/in the Monad and work on it.
+2. Use some libraries like ramdajs, that are “Maybe-aware” to access value from within the Monad and work on it.
 3. Provide a default value if the actual value happens to be null (i.e handle Null errors upfront).
 */
 

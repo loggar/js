@@ -13,7 +13,7 @@ class LinkedList {
 		this._length = 0
 		this._head = 0
 	}
-
+	
 	add(key, value) {
 		const node = {
 			key: key,
@@ -67,12 +67,12 @@ class LinkedList {
 			current = current.next
 		}
 	}
-
+	
 	get(key) {
 		if (this._head.key === key) {
 			return this._head
 		}
-
+		
 		let r
 		let current = this._head.next
 		let previous = this._head
@@ -87,13 +87,13 @@ class LinkedList {
 		}
 		return r
 	}
-
+	
 	set(key, value) {
 		if (this._head.key === key) {
 			this._head.value = value
 			return
 		}
-
+		
 		let current = this._head.next
 		let previous = this._head
 
@@ -110,7 +110,7 @@ class LinkedList {
 
 	toArray() {
 		let arr = [];
-		if (!this._head) return arr
+		if(!this._head) return arr
 		let current = this._head
 		while (current !== null) {
 			arr.push({

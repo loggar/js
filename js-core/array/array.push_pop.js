@@ -6,6 +6,3 @@ stack.pop(); // stack: [1] Returns 3
 stack.push([4,5]); // stack: [1,[4,5]] Returns 2
 stack.pop() // stack: [1] Returns [4,5]
 stack.pop(); // stack: [] Returns 1
-
-
-

@@ -132,3 +132,22 @@ new webpack.DefinePlugin({
   'SERVICE_URL': JSON.stringify("http://dev.example.com")
 })
 ```
+
+## extract-text-webpack-plugin
+
+extract-text-webpack-plugin internally uses css-loader and style-loader to gather all the CSS into one place and finally extracts the result into a separate external styles.css file and includes the link to style.css into index.html
+
+``` js
+//webpack.config.js
+//Take all the .css files, combine their contents and it extract them to a single "styles.css"
+var ETP = require("extract-text-webpack-plugin");
+
+module: {
+	loaders: [
+		{ test: /\.css$/, loader: ETP.extract("style-loader", "css-loader") }
+	]
+},
+plugins: [
+	new ExtractTextPlugin("styles.css") //Extract to styles.css file
+]
+```

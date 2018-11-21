@@ -1,4 +1,4 @@
-import { compose } from './compose-pipe.module.build'
+import { compose } from '../compose-pipe/compose-pipe.module.build'
 import tag from './fc.ex4.tag-attr.module.build'
 import { listGroup, listGroupTag, listGroupItems } from './fc.ex7.list-group.composing.build'
 

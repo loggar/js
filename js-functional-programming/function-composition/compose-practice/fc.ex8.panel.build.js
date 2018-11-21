@@ -1,6 +1,6 @@
 'use strict';
 
-var _composePipeModule = require('./compose-pipe.module.build');
+var _composePipeModule = require('../compose-pipe/compose-pipe.module.build');
 
 var _fcEx4TagAttrModule = require('./fc.ex4.tag-attr.module.build');
 

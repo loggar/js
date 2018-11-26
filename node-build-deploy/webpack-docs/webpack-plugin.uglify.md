@@ -4,11 +4,12 @@
 
 uglifyjs-webpack-plugin `https://github.com/webpack-contrib/uglifyjs-webpack-plugin`
 
-```
+``` js
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var dev = process.env.NODE_ENV !== "production";
 
-...
+// ...
+
 optimization: {
         minimizer: dev ? [
             new UglifyJsPlugin({

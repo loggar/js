@@ -14,3 +14,16 @@ function fn2() {
 }
 
 fn2();
+
+function fn3() {
+	let o = {
+		n: 0,
+		s: 'xyz'
+	}
+
+	console.log('fn3:', o.n, o.s);
+	fn1(o.n, o.s);
+	console.log('fn3:', o.n, o.s);
+}
+
+fn3();

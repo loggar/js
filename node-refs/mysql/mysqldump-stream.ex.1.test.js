@@ -3,7 +3,7 @@ var path = require('path');
 var Mysqldump = require('./mysqldump-stream');
 
 var mysqldump = new Mysqldump('elearning', {
-	gzip: true, // default: false
+	gzip: false, // default: false
 	host: 'localhost', // default: localhost
 	port: 3306, // default: 3306
 	user: 'root', // default: 'root'
@@ -17,7 +17,7 @@ try {
 		console.log('end of stream.');
 	});
 	mysqldump.start();
-	mysqldump.pipe(fs.createWriteStream(path.resolve(__dirname, './_tmp/mydatabase.sql.gz')));
+	mysqldump.pipe(fs.createWriteStream(path.resolve(__dirname, './_tmp/mydatabase.sql')));
 
 } catch (err) {
 	console.log(err);

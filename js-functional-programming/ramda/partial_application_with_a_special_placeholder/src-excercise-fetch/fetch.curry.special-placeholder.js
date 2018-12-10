@@ -2,7 +2,7 @@ import curry from 'ramda/src/curry'
 import __ from 'ramda/src/__'
 import fetch from 'node-fetch'
 
-const url_get = 'https://loggar.github.io/js/docs/sample-res/sample.1.json'
+const url_get = 'https://loggar.github.io/note/docs/sample-res/sample.1.json'
 
 /*
 fetch(url_get, { method: 'GET' })

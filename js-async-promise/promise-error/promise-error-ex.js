@@ -22,16 +22,16 @@ fetch('https://no-such-server.blabla') // rejects
   code: 'ENOTFOUND' }
 */
 
-fetch('https://loggar.github.io/js/docs/sample-res/sample.1.txt') // fetch works fine now, the server responds successfully
+fetch('https://loggar.github.io/note/docs/sample-res/sample.1.txt') // fetch works fine now, the server responds successfully
 	.then(response => response.json()) // rejects: the response is text, not a valid json
 	.catch(err => console.error(err)) // SyntaxError: Unexpected token < in JSON at position 0
 
 /*
-{ FetchError: invalid json response body at https://loggar.github.io/js/docs/sample-res/sample.1.txt reason: Unexpected number in JSON at position 2
+{ FetchError: invalid json response body at https://loggar.github.io/note/docs/sample-res/sample.1.txt reason: Unexpected number in JSON at position 2
     at C:\Users\webnl\Documents\_workspace_js\loggar_js\node_modules\node-fetch\lib\body.js:48:31
     at <anonymous>
     at process._tickCallback (internal/process/next_tick.js:188:7)
   name: 'FetchError',
-  message: 'invalid json response body at https://loggar.github.io/js/docs/sample-res/sample.1.txt reason: Unexpected number in JSON at position 2',
+  message: 'invalid json response body at https://loggar.github.io/note/docs/sample-res/sample.1.txt reason: Unexpected number in JSON at position 2',
   type: 'invalid-json' }
 */

@@ -32,7 +32,7 @@ function showAvatar(githubUser) {
 }
 
 // Use them:
-loadJson('https://loggar.github.io/js/docs/sample-res/sample.1.json')
+loadJson('https://loggar.github.io/note/docs/sample-res/sample.1.json')
 	.then(user => loadGithubUser(user.id))
 	.then(showAvatar)
 	.then(githubUser => console.log(`Finished showing ${githubUser.name}`));

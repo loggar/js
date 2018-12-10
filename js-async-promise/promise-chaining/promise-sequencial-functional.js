@@ -16,7 +16,7 @@ const promiseSerial = funcs =>
 		Promise.resolve([]))
 
 // some url's to resolve
-const urls = ['https://loggar.github.io/js/docs/sample-res/sample.1.json', 'https://loggar.github.io/js/docs/sample-res/sample.2.json', 'https://loggar.github.io/js/docs/sample-res/sample.3.json']
+const urls = ['https://loggar.github.io/note/docs/sample-res/sample.1.json', 'https://loggar.github.io/note/docs/sample-res/sample.2.json', 'https://loggar.github.io/note/docs/sample-res/sample.3.json']
 
 // convert each url to a function that returns a promise
 const funcs = urls.map(url => () => fetch(url))

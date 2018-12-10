@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 
-fetch('https://loggar.github.io/js/docs/sample-res/sample.1.json')
+fetch('https://loggar.github.io/note/docs/sample-res/sample.1.json')
 	// .then below runs when the remote server responds
 	.then(function (response) {
 		// response.text() returns a new promise that resolves with the full response text
@@ -16,7 +16,7 @@ fetch('https://loggar.github.io/js/docs/sample-res/sample.1.json')
 arrow functions for brevity:
 */
 // same as above, but response.json() parses the remote content as JSON
-fetch('https://loggar.github.io/js/docs/sample-res/sample.1.json')
+fetch('https://loggar.github.io/note/docs/sample-res/sample.1.json')
 	.then(response => response.json())
 	.then(user => console.log(user.id));
 	

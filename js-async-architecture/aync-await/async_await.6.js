@@ -2,7 +2,7 @@ import "babel-polyfill"
 
 async function showAvatar() {
 	// read our JSON
-	let response = await fetch('https://loggar.github.io/js/docs/sample-res/sample.1.json');
+	let response = await fetch('https://loggar.github.io/note/docs/sample-res/sample.1.json');
 	let user = await response.json();
 
 	// read github user

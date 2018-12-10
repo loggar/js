@@ -4,7 +4,7 @@ require('isomorphic-fetch');
 
 it('you can use Promise.all([...]) to execute promises in parallel'
 	, (done) => {
-		const url = 'https://loggar.github.io/js/docs/sample-res';
+		const url = 'https://loggar.github.io/note/docs/sample-res';
 		const p1 = fetch(`${url}/sample.3.json`);
 		const p2 = fetch(`${url}/sample.4.json`);
 
@@ -62,7 +62,7 @@ it('Promise.race([...]) will resolve as soon as ' +
 		const timeout =
 			new Promise((resolve, reject) => setTimeout(reject, 100));
 		const data =
-			fetch('https://loggar.github.io/js/docs/sample-res/sample.3.json');
+			fetch('https://loggar.github.io/note/docs/sample-res/sample.3.json');
 
 		Promise.race([data, timeout])
 			.then(() => console.log('Fetch OK'))

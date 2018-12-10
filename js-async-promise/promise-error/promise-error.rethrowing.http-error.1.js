@@ -19,5 +19,5 @@ function loadJson(url) { // (2)
 		})
 }
 
-loadJson('https://loggar.github.io/note/docs/sample-res/no-such-user.json') // (3)
-	.catch(console.error); // { HttpError: 404 for https://loggar.github.io/note/docs/sample-res/no-such-user.json ...
+loadJson('https://loggar.github.io/note/sample-res/no-such-user.json') // (3)
+	.catch(console.error); // { HttpError: 404 for https://loggar.github.io/note/sample-res/no-such-user.json ...

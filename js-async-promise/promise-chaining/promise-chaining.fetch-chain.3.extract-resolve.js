@@ -1,7 +1,7 @@
 require('isomorphic-fetch');
 
 // Make a request for user.json
-fetch('https://loggar.github.io/note/docs/sample-res/sample.1.json')
+fetch('https://loggar.github.io/note/sample-res/sample.1.json')
 	// Load it as json
 	.then(response => response.json())
 	// Make a request to github

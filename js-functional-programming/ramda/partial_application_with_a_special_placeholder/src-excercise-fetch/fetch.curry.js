@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 
-const url_get = 'https://loggar.github.io/note/docs/sample-res/sample.1.json'
+const url_get = 'https://loggar.github.io/note/sample-res/sample.1.json'
 
 fetch(url_get, { method: 'GET' })
 	.then(res => res.text())

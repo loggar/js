@@ -14,7 +14,7 @@ var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var url_get = 'https://loggar.github.io/note/docs/sample-res/sample.1.json';
+var url_get = 'https://loggar.github.io/note/sample-res/sample.1.json';
 
 (0, _nodeFetch2.default)(url_get, { method: 'GET' }).then(function (res) {
 	return res.text();

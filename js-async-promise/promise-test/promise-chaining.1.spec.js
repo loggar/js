@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 // Chaining promises
 it('you can chain promise because .then(...) returns a promise'
 	, (done) => {
-		fetch('https://loggar.github.io/note/docs/sample-res/sample.3.json')
+		fetch('https://loggar.github.io/note/sample-res/sample.3.json')
 			.then(response => response.json())
 			.then(json => expect(json.userId).toBe(1))
 			.then(done);

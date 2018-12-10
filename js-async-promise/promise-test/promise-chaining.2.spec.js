@@ -1,7 +1,7 @@
 require('isomorphic-fetch');
 
 it("Don't use new Promise(...), prefer chaining", (done) => {
-	const url = 'https://loggar.github.io/note/docs/sample-res/sample.3.json';
+	const url = 'https://loggar.github.io/note/sample-res/sample.3.json';
 
 	function badlyDesignedCustomFetch() {
 		return new Promise((resolve, reject) => {

@@ -1,4 +1,0 @@
-curl \
-	--request GET \
-	--url http://localhost:5005
-	-d 'beep=boop&dinosaur=trex'

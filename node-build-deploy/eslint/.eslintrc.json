@@ -1,9 +1,0 @@
-{
-	"env": {
-		"browser": true
-	},
-	"globals": {},
-	"rules": {
-		"strict": 0
-	}
-}

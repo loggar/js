@@ -1,3 +1,3 @@
-var nl = require('./os').nl;
+var nl = require("./os").nl;
 
-console.log("new-line", nl, "next");
+console.log("new-line" + nl + "next");

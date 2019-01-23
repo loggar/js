@@ -1,0 +1,7 @@
+{
+	"name": "practice-node-async",
+	"version": "0.1.0",
+	"dependencies": {
+		"async": "^2.6.0"
+	}
+}

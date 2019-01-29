@@ -24,7 +24,7 @@ async function example() {
     console.log(number);
     if (number > 0.95) break;
   }
-  console.log("example stop.")
+  console.log("example stop.");
 }
 
 example();

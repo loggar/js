@@ -1,7 +1,5 @@
 # Better performance of Async Programming
 
-ref) 
-
 ``` js
 const p = Promise.resolve(1);
 

@@ -22,6 +22,13 @@ var fn1 = function(type) {
   return type;
 };
 
+var fn1Sync = function(type) {
+  if (!type) {
+    return 0;
+  }
+  return type;
+};
+
 var r = "";
 
 r += fn1("A");
@@ -33,4 +40,17 @@ r += fn1("F");
 r += fn1("G");
 r += fn1("H");
 
-console.log(r);
+console.log("fn1", r);
+
+r = "";
+
+r += fn1Sync("A");
+r += fn1Sync("B");
+r += fn1Sync("C");
+r += fn1Sync("D");
+r += fn1Sync("E");
+r += fn1Sync("F");
+r += fn1Sync("G");
+r += fn1Sync("H");
+
+console.log("fn1Sync:", r);

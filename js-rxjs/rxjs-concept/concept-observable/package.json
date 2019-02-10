@@ -1,0 +1,16 @@
+{
+  "name": "rxjs-concept",
+  "version": "1.0.0",
+  "description": "",
+  "main": "converting-to-observables.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.3.0",
+    "rxjs-compat": "^6.3.0"
+  }
+}

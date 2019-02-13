@@ -4,23 +4,17 @@ const getSecret = secret => {
   };
 };
 
-test('Closure for object privacy.', assert => {
-  const msg = '.get() should have access to the closure.';
+test('Closure for object privacy.', () => {
   const expected = 1;
-  const obj = getSecret(1);
+  const obj = getSecret(expected);
 
   const actual = obj.get();
 
   try {
-    assert.ok(secret, 'This throws an error.');
+    expect(secret).toBe(expected); // This throws an error.
   } catch (e) {
-    assert.ok(
-      true,
-      `The secret var is only available
-      to privileged methods.`
-    );
+    expect(true).toBe(true); // The secret var is only available to privileged methods.
   }
 
-  assert.equal(actual, expected, msg);
-  assert.end();
+  expect(actual).toEqual(expected); // .get() should have access to the closure.'
 });

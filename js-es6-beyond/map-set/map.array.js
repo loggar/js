@@ -10,3 +10,11 @@ console.log(Array.from(myMap)); // Will show you exactly the same Array as kvArr
 
 // Or use the keys or values iterators and convert them to an array
 console.log(Array.from(myMap.keys())); // Will show ["key1", "key2"]
+
+const m = new Map();
+m.set('color', 'red');
+m.set('age', 2);
+
+const arrKey = [...m.keys()];
+
+const arrValue = [...m.values()];

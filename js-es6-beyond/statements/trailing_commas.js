@@ -14,3 +14,8 @@ let myArr = [1, 2, 3,] // No error!
 /*
 The case of the Array length is one to keep in mind.  ESLint has a comma-dangle rule you can use to ensure your comma dangle usage is consistent.
 */
+
+const doSomething = (var1, var2,) => {
+  //...
+}
+doSomething('test2', 'test2',)

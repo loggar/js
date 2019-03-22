@@ -5,7 +5,7 @@ async function f() {
 f().then(console.log); // 1
 
 /*
-…We could explicitly return a promise, that would be the same:
+We could explicitly return a promise, that would be the same:
 */
 
 async function f2() {

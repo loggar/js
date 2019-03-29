@@ -1,144 +1,143 @@
 /**
  * @Module Linked List
  * @Desc node (key, value}
- * 
+ *
  */
 class LinkedList {
-	constructor() {
-		this._length = 0
-		this._head = 0
-	}
+  constructor() {
+    this._length = 0;
+    this._head = 0;
+  }
 
-	clear() {
-		this._length = 0
-		this._head = 0
-	}
-	
-	add(key, value) {
-		const node = {
-			key: key,
-			value: value,
-			next: null
-		}
+  clear() {
+    this._length = 0;
+    this._head = 0;
+  }
 
-		if (this._length === 0) {
-			this._length = 1
-			this._head = node
-			return
-		}
+  add(key, value) {
+    const node = {
+      key: key,
+      value: value,
+      next: null
+    };
 
-		let current = this._head
-		while (current.next !== null) {
-			current = current.next
-		}
+    if (this._length === 0) {
+      this._length = 1;
+      this._head = node;
+      return;
+    }
 
-		current.next = node
-		this._length++
-	}
+    let current = this._head;
+    while (current.next !== null) {
+      current = current.next;
+    }
 
-	addHead(key, value) {
-		let node = {
-			key: key,
-			value: value,
-			next: this._head
-		}
+    current.next = node;
+    this._length++;
+  }
 
-		this._head = node
-	}
+  addHead(key, value) {
+    let node = {
+      key: key,
+      value: value,
+      next: this._head
+    };
 
-	remove(key) {
-		if (this._head.key === key) {
-			this._head = this._head.next
-			this._length--
-			return
-		}
+    this._head = node;
+  }
 
-		let current = this._head.next
-		let previous = this._head
+  remove(key) {
+    if (this._head.key === key) {
+      this._head = this._head.next;
+      this._length--;
+      return;
+    }
 
-		while (current !== null) {
-			if (current.key === key) {
-				previous.next = current.next
-				this._length--
-				break
-			}
+    let current = this._head.next;
+    let previous = this._head;
 
-			previous = current
-			current = current.next
-		}
-	}
-	
-	get(key) {
-		if (this._head.key === key) {
-			return this._head
-		}
-		
-		let r
-		let current = this._head.next
-		let previous = this._head
+    while (current !== null) {
+      if (current.key === key) {
+        previous.next = current.next;
+        this._length--;
+        break;
+      }
 
-		while (current !== null) {
-			if (current.key === key) {
-				r = current
-				break
-			}
-			previous = current
-			current = current.next
-		}
-		return r
-	}
-	
-	set(key, value) {
-		if (this._head.key === key) {
-			this._head.value = value
-			return
-		}
-		
-		let current = this._head.next
-		let previous = this._head
+      previous = current;
+      current = current.next;
+    }
+  }
 
-		while (current !== null) {
-			if (current.key === key) {
-				current.value = value
-				break
-			}
-			previous = current
-			current = current.next
-		}
-		return
-	}
+  get(key) {
+    if (this._head.key === key) {
+      return this._head;
+    }
 
-	toArray() {
-		let arr = [];
-		if(!this._head) return arr
-		let current = this._head
-		while (current !== null) {
-			arr.push({
-				key: current.key,
-				value: current.value
-			})
-			current = current.next;
-		}
-		return arr;
-	}
+    let r;
+    let current = this._head.next;
+    let previous = this._head;
+
+    while (current !== null) {
+      if (current.key === key) {
+        r = current;
+        break;
+      }
+      previous = current;
+      current = current.next;
+    }
+    return r;
+  }
+
+  set(key, value) {
+    if (this._head.key === key) {
+      this._head.value = value;
+      return;
+    }
+
+    let current = this._head.next;
+    let previous = this._head;
+
+    while (current !== null) {
+      if (current.key === key) {
+        current.value = value;
+        break;
+      }
+      previous = current;
+      current = current.next;
+    }
+    return;
+  }
+
+  toArray() {
+    let arr = [];
+    if (!this._head) return arr;
+    let current = this._head;
+    while (current !== null) {
+      arr.push({
+        key: current.key,
+        value: current.value
+      });
+      current = current.next;
+    }
+    return arr;
+  }
 }
 
 var ql = new LinkedList();
 ql.add(ql._length, {
-	a: 1
+  a: 1
 });
 
 ql.add(ql._length, {
-	a: 2
+  a: 2
 });
 
 ql.add(ql._length, {
-	a: 3
+  a: 3
 });
 
-
 ql.add(ql._length, {
-	a: 4
+  a: 4
 });
 
 console.log(ql.toArray());

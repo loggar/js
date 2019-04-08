@@ -1,4 +1,4 @@
-var isArray = require("./is-array.js");
+var isArray = require("./is-array.js.js");
 
 var a1 = [1, 2, 3];
 

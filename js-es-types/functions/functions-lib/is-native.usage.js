@@ -1,4 +1,4 @@
-var isNative = require("./is-native.js");
+var isNative = require("./is-native.js.js");
 
 var myCustomFunction = function () {
 	// not native fn : you can override it!

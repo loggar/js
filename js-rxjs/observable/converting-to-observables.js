@@ -1,4 +1,4 @@
-const Rx = require('rxjs/Rx');
+const Rx = require('./rxjs/Rx');
 
 // From one or multiple values
 Rx.Observable.of('foo', 'bar');

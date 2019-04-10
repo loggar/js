@@ -1,4 +1,4 @@
-const Rx = require('rxjs/Rx');
+const Rx = require('./rxjs/Rx');
 
 // Externally produce new events.
 var myObservable = new Rx.Subject();

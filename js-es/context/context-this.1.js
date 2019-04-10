@@ -14,13 +14,3 @@ var obj = {
 };
 
 obj.foo();
-
-console.log(global);
-
-console.log(this === global); // false, node
-
-function a() {
-  console.log(this === global); // true, node
-}
-
-a();

@@ -5,9 +5,5 @@ if (typeof global === 'undefined') {
 } else {
   // node.js
   global.window = {};
-}
-if (typeof global === 'undefined') {
-  export { global };
-} else {
-  
+  module.exports = global;
 }

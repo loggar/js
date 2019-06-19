@@ -8,12 +8,15 @@ import React, { Component } from React;
 export default class App extends Compononent {
   constructor(props) {
   super(props);
+
   this.state = {};
   }
-myMethod = () => {
+
+  myMethod = () => {
     // This method is bound implicitly!
   }
-render() {
+  
+  render() {
     return (
       <>
         <div>

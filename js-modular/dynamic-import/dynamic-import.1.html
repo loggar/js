@@ -1,0 +1,10 @@
+<script type="module">
+  (async () => {
+    const moduleSpecifier = "./utils.mjs";
+    const module = await import(moduleSpecifier);
+    module.default();
+    // → logs 'Hi from the default export!'
+    module.doStuff();
+    // → logs 'Doing stuff…'
+  })();
+</script>

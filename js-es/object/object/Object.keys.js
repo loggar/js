@@ -16,3 +16,9 @@ for (var key in params) {
 for (key of Object.keys(params)) {
   console.log(key, params[key]);
 }
+
+var paramKeys = Object.keys(params);
+for (var i = 0; i < paramKeys.length; i++) {
+  var key = paramKeys[i];
+  console.log(key, params[key]);
+}

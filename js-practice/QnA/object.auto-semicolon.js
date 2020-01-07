@@ -1,13 +1,13 @@
 function foo1() {
   return {
-    bar: 'bar'
+    bar: "bar"
   };
 }
 
 function foo2() {
   return;
   {
-    ('bar');
+    ("bar");
   }
 }
 

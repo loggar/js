@@ -3,8 +3,8 @@ Math.round(.6) // => 1.0: round to the nearest integer
 Math.ceil(.6) // => 1.0: round up to an integer
 Math.floor(.6) // => 0.0: round down to an integer
 Math.abs(-5) // => 5: absolute value
-Math.max(x,y,z) // Return the largest argument
-Math.min(x,y,z) // Return the smallest argument
+Math.max(1,2,3) // Return the largest argument
+Math.min(1,2,3) // Return the smallest argument
 Math.random() // Pseudo-random number x where 0 <= x < 1.0
 Math.PI // π: circumference of a circle / diameter
 Math.E // e: The base of the natural logarithm

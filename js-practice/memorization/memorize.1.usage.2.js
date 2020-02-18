@@ -1,4 +1,4 @@
-var memorize = require("./memorize");
+var memorize = require("./memorize.1");
 
 var factorial = memorize(function (n) {
     return (n <= 1) ? 1 : n * factorial(n - 1);

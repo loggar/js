@@ -1,4 +1,4 @@
-var memorize = require("./memorize");
+var memorize = require("./memorize.1");
 
 // function Greatest Common Divisor of two integers.
 function gcd(a, b) {

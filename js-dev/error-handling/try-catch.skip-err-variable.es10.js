@@ -1,4 +1,4 @@
-a = () => {
+const a = () => {
   try {
     JSON.parse(text);
     return true;

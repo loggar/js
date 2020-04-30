@@ -6,6 +6,6 @@
 	"dependencies": {},
 	"devDependencies": {
 		"lite-server": "2.3.0",
-		"jquery": "3.4.1"
+		"jquery": "3.5.0"
 	}
 }

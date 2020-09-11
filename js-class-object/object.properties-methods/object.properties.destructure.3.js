@@ -3,7 +3,7 @@ function handle(req, res) {
   const description = req.body.description;
   const url = req.url;
 
-  log("url endpoint", url);
+  console.log("url endpoint", url);
 
   // lots of logic happening
   dbService.createPerson(name, description);
@@ -13,10 +13,10 @@ function handle(req, res) {
 function handle(req, res) {
   const {
     body: { name, description },
-    url
+    url,
   } = req;
 
-  log("url endpoint", url);
+  console.log("url endpoint", url);
 
   // lots of logic happening
   dbService.createPerson(name, description);

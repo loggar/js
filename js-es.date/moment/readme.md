@@ -1,5 +1,8 @@
 # moment.js
 
+> https://momentjs.com/docs/
+> We now generally consider Moment to be a legacy project in maintenance mode. It is not dead, but it is indeed done.
+
 Node.js
 
 ```

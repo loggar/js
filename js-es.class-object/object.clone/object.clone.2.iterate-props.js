@@ -9,6 +9,7 @@ function iterationCopy(src) {
   }
   return target;
 }
+
 const source = { a: 1, b: 2, c: 3 };
 const target = iterationCopy(source);
 console.log(target); // {a:1, b:2, c:3}

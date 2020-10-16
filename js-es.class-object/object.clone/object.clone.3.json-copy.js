@@ -3,6 +3,7 @@
 function jsonCopy(src) {
   return JSON.parse(JSON.stringify(src));
 }
+
 const source = { a: 1, b: 2, c: 3 };
 const target = jsonCopy(source);
 console.log(target); // {a:1, b:2, c:3}

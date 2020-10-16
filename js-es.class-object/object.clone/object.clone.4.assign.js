@@ -5,6 +5,7 @@
 function bestCopyEver(src) {
   return Object.assign({}, src);
 }
+
 const source = { a: 1, b: 2, c: 3 };
 const target = bestCopyEver(source);
 console.log(target); // {a:1, b:2, c:3}

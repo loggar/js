@@ -1,0 +1,38 @@
+<div class="counter">
+  <p>
+    Count: <span>0</span>
+    <button>Increase Count</button>
+  </p>
+</div>
+
+<script>
+  class Counter {
+    #count = 0;
+    constructor(counter) {
+      this.countElement = counter.querySelector("span");
+      this.buttonElement = counter.querySelector("button");
+
+      // Initializes count
+      this.#count = parseInt(this.countElement.textContent);
+
+      /*
+      this.buttonElement.addEventListener(
+        "click",
+        this.increaseCount.bind(this)
+      );
+      */
+      this.buttonElement.addEventListener("click", this.increaseCount);
+    }
+
+    increaseCount() {
+      this.#count = this.#count + 1;
+      this.updateCount();
+    }
+
+    updateCount() {
+      this.countElement.textContent = this.#count;
+    }
+  }
+
+  const counter = new Counter(document.querySelector(".counter"));
+</script>

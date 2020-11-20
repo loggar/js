@@ -6,7 +6,7 @@ var getId1 = function (v) {
   }
   var r = v.substring(i_s + 1, i_e);
   if (!r) {
-    return v.trim();
+    return "";
   } else {
     return r.trim();
   }
@@ -20,7 +20,7 @@ var getId2 = function (v) {
   }
   var r = v.substring(i_s + 2, i_e);
   if (!r) {
-    return v.trim();
+    return "";
   } else {
     return r.trim();
   }
@@ -71,5 +71,6 @@ var parseInvoiceId = function (invoiceId) {
 // console.log("5", parseInvoiceId("[ABC-2020-000004] A4220095135 (12000068)"));
 // console.log("5", parseInvoiceId("ABC-2020-000004"));
 // console.log("6", parseInvoiceId("A4220095135 (12000068)"));
-console.log("7", parseInvoiceId("[ABC-2020-000004] A4220095135"));
-console.log("8", parseInvoiceId(" A4220095135"));
+//console.log("7", parseInvoiceId(" A4220095135"));
+// console.log("8", parseInvoiceId("[ABC-2020-000004] A4220095135"));
+console.log("9", parseInvoiceId("[ABC-2020-000004] A4220095135 ()"));

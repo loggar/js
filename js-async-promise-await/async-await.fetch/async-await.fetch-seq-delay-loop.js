@@ -12,6 +12,7 @@ const taskPromise = function (reqIdx, id, accumulator) {
       method: "POST",
       body: JSON.stringify({
         id: id,
+        // ...
       }),
       headers: {
         Accept: "application/json",
@@ -22,18 +23,16 @@ const taskPromise = function (reqIdx, id, accumulator) {
         return res.json();
       })
       .then((data) => {
-        koiLogger.info(reqIdx, "taskPromise", data);
+        logger.info(reqIdx, "taskPromise", data);
         accumulator.push(data);
       });
   });
 };
 
 const fn_req_delete_invoice = async function (arr) {
-  var rarr = [];
+  var ms = 500;
+  var r = [];
   for (var i = 0; i < arr.length; i++) {
-    await taskDelayDecorator(
-      taskInvoiceDelete(i, invoices[i].invoiceNo, rarr),
-      500
-    );
+    await taskDelayDecorator(taskPromise(i, arr[i].id, r), ms);
   }
 };

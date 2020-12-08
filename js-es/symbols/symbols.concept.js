@@ -2,6 +2,8 @@ var sym = Symbol("some optional description");
 
 typeof sym;        // "symbol"
 
+typeof Symbol();        // "symbol"
+
 sym.toString();        // "Symbol(some optional description)"
 
 

@@ -1,5 +1,3 @@
-import { g } from "../../js-env/global/global";
-
 class Graph {
   constructor() {
     this.adjacencyList = {};
@@ -37,7 +35,7 @@ class Graph {
 }
 
 // Breadth First Search
-raph.prototype.bfs = function (start) {
+Graph.prototype.bfs = function (start) {
   const queue = [start];
   const result = [];
   const visited = {};
@@ -94,4 +92,54 @@ Graph.prototype.dfsIterative = function (start) {
   return result;
 };
 
+Graph.prototype._detectCycleRec = function (vertex, visited, recStack) {
+  if (!visited[vertex]) {
+    visited[vertex] = true;
+    recStack[vertex] = true;
+    const nodeNeighbors = this.adjacencyList[vertex];
+    for (let i = 0; i < nodeNeighbors.length; i++) {
+      const currentNode = nodeNeighbors[i];
+      console.log("travel", vertex, "->", currentNode);
+      if (
+        !visited[currentNode] &&
+        this._detectCycleRec(currentNode, visited, recStack)
+      ) {
+        return true;
+      } else if (recStack[currentNode]) {
+        return true;
+      }
+    }
+  }
+  recStack[vertex] = false;
+  return false;
+};
+
+Graph.prototype.detectCycle = function () {
+  const nodes = Object.keys(this.adjacencyList);
+  const visited = {};
+  const recStack = {};
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    if (this._detectCycleRec(node, visited, recStack)) {
+      return true;
+    }
+  }
+  return false;
+};
+
+Graph.prototype.log = function () {
+  console.log(this.adjacencyList);
+};
+
 var g = new Graph();
+
+g.addEdge("1", "2");
+g.addEdge("4", "5");
+g.addEdge("3", "5");
+g.addEdge("1", "4");
+g.addEdge("1", "3");
+g.addEdge("5", "2");
+g.addEdge("4", "2");
+
+g.log();
+console.log("g.detectCycle()", g.detectCycle());

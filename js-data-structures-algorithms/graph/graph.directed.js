@@ -1,4 +1,4 @@
-class Graph {
+class DirectedGraph {
   constructor() {
     this.adjacencyList = {};
   }
@@ -31,7 +31,7 @@ class Graph {
 }
 
 // Breadth First Search
-Graph.prototype.bfs = function (start) {
+DirectedGraph.prototype.bfs = function (start) {
   const queue = [start];
   const result = [];
   const visited = {};
@@ -50,8 +50,31 @@ Graph.prototype.bfs = function (start) {
   return result;
 };
 
+// find all path from a node
+DirectedGraph.prototype.findAllPath = function (vertex, end, path = [], paths = []) {
+  path.push(vertex);
+  console.log("Current Path", path);
+  if (vertex === end) {
+    console.log("Found Valid", path);
+    paths.push(JSON.parse(JSON.stringify(path)));
+    return;
+  }
+
+  const nodeNeighbors = this.adjacencyList[vertex];
+  for (let i = 0; i < nodeNeighbors.length; i++) {
+    const currentNode = nodeNeighbors[i];
+    console.log("travel", vertex, "->", currentNode);
+    if (path.indexOf(currentNode) === -1) {
+      var newPath = JSON.parse(JSON.stringify(path));
+      this.findAllPath(currentNode, end, newPath, paths);
+    }
+  }
+
+  return paths;
+};
+
 // Depth First Search (Recursive)
-Graph.prototype.dfsRecursive = function (start) {
+DirectedGraph.prototype.dfsRecursive = function (start) {
   const result = [];
   const visited = {};
   const adjacencyList = this.adjacencyList;
@@ -69,7 +92,7 @@ Graph.prototype.dfsRecursive = function (start) {
 };
 
 // Depth First Search (Iterative)
-Graph.prototype.dfsIterative = function (start) {
+DirectedGraph.prototype.dfsIterative = function (start) {
   const result = [];
   const stack = [start];
   const visited = {};
@@ -88,7 +111,12 @@ Graph.prototype.dfsIterative = function (start) {
   return result;
 };
 
-Graph.prototype._detectCycleRec = function (vertex, visited, recStack) {
+DirectedGraph.prototype._detectCycleRec = function (
+  vertex,
+  visited,
+  recStack,
+  travelled
+) {
   if (!visited[vertex]) {
     visited[vertex] = true;
     recStack[vertex] = true;
@@ -96,9 +124,15 @@ Graph.prototype._detectCycleRec = function (vertex, visited, recStack) {
     for (let i = 0; i < nodeNeighbors.length; i++) {
       const currentNode = nodeNeighbors[i];
       console.log("travel", vertex, "->", currentNode);
+      if (travelled) {
+        travelled.push({
+          source: vertex,
+          destination: currentNode,
+        });
+      }
       if (
         !visited[currentNode] &&
-        this._detectCycleRec(currentNode, visited, recStack)
+        this._detectCycleRec(currentNode, visited, recStack, travelled)
       ) {
         return true;
       } else if (recStack[currentNode]) {
@@ -110,7 +144,7 @@ Graph.prototype._detectCycleRec = function (vertex, visited, recStack) {
   return false;
 };
 
-Graph.prototype.detectCycle = function () {
+DirectedGraph.prototype.detectCycle = function () {
   const nodes = Object.keys(this.adjacencyList);
   const visited = {};
   const recStack = {};
@@ -123,20 +157,68 @@ Graph.prototype.detectCycle = function () {
   return false;
 };
 
-Graph.prototype.log = function () {
-  console.log(this.adjacencyList);
+DirectedGraph.prototype.deleteCycle = function (cnt = 0) {
+  const nodes = Object.keys(this.adjacencyList);
+  const visited = {};
+  const recStack = {};
+  const travelled = {};
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    travelled[node] = [];
+    if (this._detectCycleRec(node, visited, recStack, travelled[node])) {
+      console.log("travelled", travelled);
+      let cycleLastEdge = travelled[node][travelled[node].length - 1];
+      console.log("cycleLastEdge", cycleLastEdge);
+      this.removeEdge(cycleLastEdge.source, cycleLastEdge.destination);
+      cnt++;
+      return this.deleteCycle(cnt);
+    }
+  }
+  return cnt;
 };
 
-var g = new Graph();
+DirectedGraph.prototype.deleteUnnecessaryOneDistanceEdge = function () {
+  let cnt = 0;
+  const nodes = Object.keys(this.adjacencyList);
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    const oneDistanceDestinations = this.adjacencyList[node];
+    for (let j = 0; j < oneDistanceDestinations.length; j++) {
+      const paths = g.findAllPath(node, oneDistanceDestinations[j]);
+      if (paths.length > 1) {
+        g.removeEdge(node, oneDistanceDestinations[j]);
+        cnt++;
+      }
+    }
+  }
+  return cnt;
+};
+
+DirectedGraph.prototype.toString = function () {
+  return Object.assign({}, this.adjacencyList);
+};
+
+var g = new DirectedGraph();
 
 g.addEdge("1", "2");
-g.addEdge("4", "5");
-g.addEdge("3", "5");
-g.addEdge("1", "4");
 g.addEdge("1", "3");
-g.addEdge("5", "2");
-g.addEdge("4", "2");
+g.addEdge("1", "4");
+g.addEdge("1", "5");
 g.addEdge("2", "4");
+g.addEdge("2", "5");
+g.addEdge("3", "5");
+g.addEdge("4", "2");
+g.addEdge("4", "5");
+g.addEdge("5", "2");
+console.log("graph", g.toString());
 
-g.log();
-console.log("g.detectCycle()", g.detectCycle());
+if (g.detectCycle()) {
+  console.log("g.deleteCycle()", g.deleteCycle());
+  console.log("graph", g.toString());
+}
+
+console.log(
+  "g.deleteUnnecessaryOneDistanceEdge()",
+  g.deleteUnnecessaryOneDistanceEdge()
+);
+console.log("graph", g.toString());

@@ -183,7 +183,7 @@ DirectedGraph.prototype.detectCycle = function () {
   return false;
 };
 
-DirectedGraph.prototype.deleteCycle = function (cnt = 0) {
+DirectedGraph.prototype.deleteCycle = function (deletedEdges = []) {
   const nodes = Object.keys(this.adjacencies);
   const visited = {};
   const recStack = {};
@@ -196,15 +196,16 @@ DirectedGraph.prototype.deleteCycle = function (cnt = 0) {
       let cycleLastEdge = travelled[node][travelled[node].length - 1];
       console.log("cycleLastEdge", cycleLastEdge);
       this.removeEdge(cycleLastEdge.source, cycleLastEdge.destination);
-      cnt++;
-      return this.deleteCycle(cnt);
+      deletedEdges.push(Object.assign({}, cycleLastEdge));
+      return this.deleteCycle(deletedEdges);
     }
   }
-  return cnt;
+  return deletedEdges;
 };
 
-DirectedGraph.prototype.deleteUnnecessaryOneDistanceEdge = function () {
-  let cnt = 0;
+DirectedGraph.prototype.deleteUnnecessaryOneDistanceEdge = function (
+  deletedEdges = []
+) {
   const nodes = Object.keys(this.adjacencies);
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i];
@@ -213,11 +214,14 @@ DirectedGraph.prototype.deleteUnnecessaryOneDistanceEdge = function () {
       const paths = this.findAllPath(node, destinations[j]);
       if (paths.length > 1) {
         this.removeEdge(node, destinations[j]);
-        cnt++;
+        deletedEdges.push({
+          source: node,
+          destination: destinations[j],
+        });
       }
     }
   }
-  return cnt;
+  return deletedEdges;
 };
 
 var g = new DirectedGraph();

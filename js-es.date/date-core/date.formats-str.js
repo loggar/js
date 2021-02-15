@@ -16,4 +16,3 @@ console.log(date3);
 
 var strDate = y + '-' + m + '-' + d + ' 00:00:00.000'
 console.log(strDate);
-

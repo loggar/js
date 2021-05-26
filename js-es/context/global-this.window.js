@@ -1,7 +1,7 @@
-console.log(this === window); // true, window
+console.log("1", this === window); // true, window
 
 function a() {
-  console.log(this === window); // true, window
+  console.log("2", this === window); // true, window
 }
 
 a();

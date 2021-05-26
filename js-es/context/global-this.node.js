@@ -1,7 +1,7 @@
-console.log(this === global); // false, node
+console.log("1", this === global); // false, node
 
 function a() {
-  console.log(this === global); // true, node
+  console.log("2", this === global); // true, node
 }
 
 a();

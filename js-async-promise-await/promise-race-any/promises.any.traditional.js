@@ -12,3 +12,12 @@ Promise.any([
     // All of the promises were rejected.
     console.log(error);
   });
+
+Promise.any([
+  Promise.reject("Error 1"),
+  Promise.reject("Error 2"),
+  Promise.resolve("success"),
+]).then((result) => {
+  console.log("result:", result);
+});
+// result: success

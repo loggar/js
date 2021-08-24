@@ -23,5 +23,5 @@ If you wish to use functional patterns, `async/await` is probably not for you.
 
 .. As it is pretty clearly intended to be used for imperative code styles.
 
-To make your .then chains more "pure" looking, you can use Ramda's pipeP and composeP functions.
+To make your .then chains more "pure" looking, you can use Ramda pipeP and composeP functions.
 */

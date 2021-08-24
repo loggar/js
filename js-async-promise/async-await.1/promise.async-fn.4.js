@@ -1,8 +1,8 @@
 const processData = () => {
   return 12;
 };
-const processDataAsycn = async () => {
+const processDataAsyc = async () => {
   return 12;
 };
 console.log("Data from processData() without async: " + processData());
-console.log("Data from processDataAsycn() with async: " + processDataAsycn());
+console.log("Data from processDataAsyc() with async: " + processDataAsyc());

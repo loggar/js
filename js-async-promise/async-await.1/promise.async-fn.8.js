@@ -1,4 +1,4 @@
-const getDataPromise = num =>
+const getDataPromise = (num) =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       typeof num === "number"
@@ -6,21 +6,21 @@ const getDataPromise = num =>
         : reject("Input must be an number");
     }, 2000);
   });
-const processDataAsycn = async () => {
+const processDataAsyc = async () => {
   let data = await getDataPromise("2");
   data = await getDataPromise(data);
   return data;
 };
-processDataAsycn()
-  .then(data => {
+processDataAsyc()
+  .then((data) => {
     console.log(
-      "Data from processDataAsycn() with async( When promise gets resolved ): " +
+      "Data from processDataAsyc() with async( When promise gets resolved ): " +
         data
     );
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(
-      "Error from processDataAsycn() with async( When promise gets rejected ): " +
+      "Error from processDataAsyc() with async( When promise gets rejected ): " +
         error
     );
   });

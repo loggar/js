@@ -17,5 +17,5 @@ async function runTest(filename) {
 /*
 await can only be placed inside a function marked async.
 async-await uses Promises under the hood. That means you can await any function that returns a Promise.
-You can usetry-catch as usual to catch errors in async functions.
+You can use try-catch as usual to catch errors in async functions.
 */

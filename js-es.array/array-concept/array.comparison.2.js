@@ -1,4 +1,4 @@
-const arr1 = ["a", "b", "c"];
+const arr1 = ["a", "c", "b"];
 const arr2 = ["b", "c", "a"];
 
 console.log(

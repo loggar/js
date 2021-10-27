@@ -1,5 +1,5 @@
-var constructor = function () {
-	var x = 0;
+const constructor = function () {
+	let x = 0;
 	return {
 		a: 1,
 		b: "b",
@@ -13,9 +13,9 @@ var constructor = function () {
 	}
 }
 
-var a = constructor();
+const a = constructor();
 
-var b = constructor();
+const b = constructor();
 
 b.a = 2;
 b.setX(-1);
